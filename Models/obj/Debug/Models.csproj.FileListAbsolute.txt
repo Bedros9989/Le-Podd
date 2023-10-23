@@ -7,3 +7,12 @@
 \\Mac\Home\Documents\C#\PodcastHanteraren\Models\obj\Debug\Models.csproj.CopyComplete
 \\Mac\Home\Documents\C#\PodcastHanteraren\Models\obj\Debug\Models.dll
 \\Mac\Home\Documents\C#\PodcastHanteraren\Models\obj\Debug\Models.pdb
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\bin\Debug\Models.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\bin\Debug\Models.pdb
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\bin\Debug\System.ServiceModel.Syndication.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\bin\Debug\System.ServiceModel.Syndication.xml
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\obj\Debug\Models.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\obj\Debug\Models.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\obj\Debug\Models.csproj.CopyComplete
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\obj\Debug\Models.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\Models\obj\Debug\Models.pdb

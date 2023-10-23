@@ -28,100 +28,316 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            this.urlTextBox = new System.Windows.Forms.TextBox();
+            this.läggTill = new System.Windows.Forms.Button();
+            this.poddTabell = new System.Windows.Forms.DataGridView();
+            this.avsnittsTabell = new System.Windows.Forms.DataGridView();
+            this.namnTextBox = new System.Windows.Forms.TextBox();
+            this.taBort = new System.Windows.Forms.Button();
+            this.urlLabel = new System.Windows.Forms.Label();
+            this.namnLabel = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.kategoriLabel = new System.Windows.Forms.Label();
+            this.ändra = new System.Windows.Forms.Button();
+            this.filtrera = new System.Windows.Forms.ComboBox();
+            this.återställ = new System.Windows.Forms.Button();
+            this.beskrivningsTabell = new System.Windows.Forms.DataGridView();
+            this.avsnittLabel = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.kategoriTextBox = new System.Windows.Forms.TextBox();
+            this.läggTill2 = new System.Windows.Forms.Button();
+            this.ändra2 = new System.Windows.Forms.Button();
+            this.taBort2 = new System.Windows.Forms.Button();
+            this.kategoriLabel2 = new System.Windows.Forms.Label();
+            this.kategoriTabell = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.poddTabell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avsnittsTabell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beskrivningsTabell)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategoriTabell)).BeginInit();
             this.SuspendLayout();
             // 
-            // textBox1
+            // urlTextBox
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 64);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(52, 20);
-            this.textBox1.TabIndex = 0;
+            this.urlTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.urlTextBox.Location = new System.Drawing.Point(118, 62);
+            this.urlTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.urlTextBox.Name = "urlTextBox";
+            this.urlTextBox.Size = new System.Drawing.Size(250, 20);
+            this.urlTextBox.TabIndex = 0;
             // 
-            // button1
+            // läggTill
             // 
-            this.button1.Location = new System.Drawing.Point(227, 56);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(81, 24);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.läggTill.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.läggTill.Location = new System.Drawing.Point(410, 71);
+            this.läggTill.Margin = new System.Windows.Forms.Padding(2);
+            this.läggTill.Name = "läggTill";
+            this.läggTill.Size = new System.Drawing.Size(81, 24);
+            this.läggTill.TabIndex = 1;
+            this.läggTill.Text = "Lägg till";
+            this.läggTill.UseVisualStyleBackColor = true;
+            this.läggTill.Click += new System.EventHandler(this.button1_Click);
             // 
-            // dataGridView1
+            // poddTabell
             // 
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.DarkGray;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridView1.Location = new System.Drawing.Point(38, 119);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowHeadersWidth = 15;
-            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.RowTemplate.Height = 23;
-            this.dataGridView1.RowTemplate.ReadOnly = true;
-            this.dataGridView1.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.Size = new System.Drawing.Size(401, 283);
-            this.dataGridView1.TabIndex = 2;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.poddTabell.BackgroundColor = System.Drawing.Color.White;
+            this.poddTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.poddTabell.Location = new System.Drawing.Point(39, 174);
+            this.poddTabell.Margin = new System.Windows.Forms.Padding(2);
+            this.poddTabell.Name = "poddTabell";
+            this.poddTabell.RowHeadersVisible = false;
+            this.poddTabell.RowHeadersWidth = 15;
+            this.poddTabell.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.poddTabell.RowTemplate.Height = 23;
+            this.poddTabell.RowTemplate.ReadOnly = true;
+            this.poddTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.poddTabell.Size = new System.Drawing.Size(453, 351);
+            this.poddTabell.TabIndex = 2;
+            this.poddTabell.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // dataGridView2
+            // avsnittsTabell
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(475, 119);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowHeadersVisible = false;
-            this.dataGridView2.RowHeadersWidth = 82;
-            this.dataGridView2.RowTemplate.Height = 23;
-            this.dataGridView2.RowTemplate.ReadOnly = true;
-            this.dataGridView2.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.Size = new System.Drawing.Size(387, 283);
-            this.dataGridView2.TabIndex = 3;
+            this.avsnittsTabell.BackgroundColor = System.Drawing.Color.White;
+            this.avsnittsTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.avsnittsTabell.GridColor = System.Drawing.SystemColors.ControlText;
+            this.avsnittsTabell.Location = new System.Drawing.Point(521, 174);
+            this.avsnittsTabell.Margin = new System.Windows.Forms.Padding(2);
+            this.avsnittsTabell.Name = "avsnittsTabell";
+            this.avsnittsTabell.RowHeadersVisible = false;
+            this.avsnittsTabell.RowHeadersWidth = 82;
+            this.avsnittsTabell.RowTemplate.Height = 23;
+            this.avsnittsTabell.RowTemplate.ReadOnly = true;
+            this.avsnittsTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.avsnittsTabell.Size = new System.Drawing.Size(334, 351);
+            this.avsnittsTabell.TabIndex = 3;
             // 
-            // textBox2
+            // namnTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(118, 64);
-            this.textBox2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(52, 20);
-            this.textBox2.TabIndex = 4;
+            this.namnTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namnTextBox.Location = new System.Drawing.Point(118, 89);
+            this.namnTextBox.Margin = new System.Windows.Forms.Padding(2);
+            this.namnTextBox.Name = "namnTextBox";
+            this.namnTextBox.Size = new System.Drawing.Size(250, 20);
+            this.namnTextBox.TabIndex = 4;
             // 
-            // button2
+            // taBort
             // 
-            this.button2.Location = new System.Drawing.Point(313, 56);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(81, 23);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.taBort.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taBort.Location = new System.Drawing.Point(410, 127);
+            this.taBort.Name = "taBort";
+            this.taBort.Size = new System.Drawing.Size(81, 23);
+            this.taBort.TabIndex = 5;
+            this.taBort.Text = "Ta bort";
+            this.taBort.UseVisualStyleBackColor = true;
+            this.taBort.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // urlLabel
+            // 
+            this.urlLabel.AutoSize = true;
+            this.urlLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.urlLabel.Location = new System.Drawing.Point(81, 69);
+            this.urlLabel.Name = "urlLabel";
+            this.urlLabel.Size = new System.Drawing.Size(30, 14);
+            this.urlLabel.TabIndex = 6;
+            this.urlLabel.Text = "URL:";
+            // 
+            // namnLabel
+            // 
+            this.namnLabel.AutoSize = true;
+            this.namnLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namnLabel.Location = new System.Drawing.Point(38, 92);
+            this.namnLabel.Name = "namnLabel";
+            this.namnLabel.Size = new System.Drawing.Size(78, 14);
+            this.namnLabel.TabIndex = 7;
+            this.namnLabel.Text = "Namn (valfritt):";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(118, 114);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(152, 22);
+            this.comboBox1.TabIndex = 8;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(276, 114);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(92, 22);
+            this.comboBox2.TabIndex = 9;
+            // 
+            // kategoriLabel
+            // 
+            this.kategoriLabel.AutoSize = true;
+            this.kategoriLabel.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kategoriLabel.Location = new System.Drawing.Point(63, 117);
+            this.kategoriLabel.Name = "kategoriLabel";
+            this.kategoriLabel.Size = new System.Drawing.Size(50, 14);
+            this.kategoriLabel.TabIndex = 10;
+            this.kategoriLabel.Text = "Kategori:";
+            // 
+            // ändra
+            // 
+            this.ändra.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ändra.Location = new System.Drawing.Point(410, 99);
+            this.ändra.Name = "ändra";
+            this.ändra.Size = new System.Drawing.Size(81, 23);
+            this.ändra.TabIndex = 11;
+            this.ändra.Text = "Ändra";
+            this.ändra.UseVisualStyleBackColor = true;
+            // 
+            // filtrera
+            // 
+            this.filtrera.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.filtrera.FormattingEnabled = true;
+            this.filtrera.Location = new System.Drawing.Point(118, 142);
+            this.filtrera.Name = "filtrera";
+            this.filtrera.Size = new System.Drawing.Size(152, 22);
+            this.filtrera.TabIndex = 12;
+            // 
+            // återställ
+            // 
+            this.återställ.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.återställ.Location = new System.Drawing.Point(276, 140);
+            this.återställ.Name = "återställ";
+            this.återställ.Size = new System.Drawing.Size(92, 23);
+            this.återställ.TabIndex = 13;
+            this.återställ.Text = "Återställ";
+            this.återställ.UseVisualStyleBackColor = true;
+            // 
+            // beskrivningsTabell
+            // 
+            this.beskrivningsTabell.BackgroundColor = System.Drawing.Color.White;
+            this.beskrivningsTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.beskrivningsTabell.Location = new System.Drawing.Point(884, 385);
+            this.beskrivningsTabell.Name = "beskrivningsTabell";
+            this.beskrivningsTabell.RowHeadersVisible = false;
+            this.beskrivningsTabell.RowTemplate.ReadOnly = true;
+            this.beskrivningsTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.beskrivningsTabell.Size = new System.Drawing.Size(247, 140);
+            this.beskrivningsTabell.TabIndex = 15;
+            // 
+            // avsnittLabel
+            // 
+            this.avsnittLabel.AutoSize = true;
+            this.avsnittLabel.Font = new System.Drawing.Font("Arial", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avsnittLabel.Location = new System.Drawing.Point(643, 121);
+            this.avsnittLabel.Name = "avsnittLabel";
+            this.avsnittLabel.Size = new System.Drawing.Size(83, 27);
+            this.avsnittLabel.TabIndex = 16;
+            this.avsnittLabel.Text = "Avsnitt";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(948, 349);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 22);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Beskrivning";
+            // 
+            // kategoriTextBox
+            // 
+            this.kategoriTextBox.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kategoriTextBox.Location = new System.Drawing.Point(884, 116);
+            this.kategoriTextBox.Name = "kategoriTextBox";
+            this.kategoriTextBox.Size = new System.Drawing.Size(247, 20);
+            this.kategoriTextBox.TabIndex = 18;
+            // 
+            // läggTill2
+            // 
+            this.läggTill2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.läggTill2.Location = new System.Drawing.Point(884, 144);
+            this.läggTill2.Name = "läggTill2";
+            this.läggTill2.Size = new System.Drawing.Size(75, 24);
+            this.läggTill2.TabIndex = 19;
+            this.läggTill2.Text = "Lägg till";
+            this.läggTill2.UseVisualStyleBackColor = true;
+            this.läggTill2.Click += new System.EventHandler(this.läggTill2_Click);
+            // 
+            // ändra2
+            // 
+            this.ändra2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ändra2.Location = new System.Drawing.Point(970, 143);
+            this.ändra2.Name = "ändra2";
+            this.ändra2.Size = new System.Drawing.Size(75, 25);
+            this.ändra2.TabIndex = 20;
+            this.ändra2.Text = "Ändra";
+            this.ändra2.UseVisualStyleBackColor = true;
+            // 
+            // taBort2
+            // 
+            this.taBort2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taBort2.Location = new System.Drawing.Point(1056, 143);
+            this.taBort2.Name = "taBort2";
+            this.taBort2.Size = new System.Drawing.Size(75, 25);
+            this.taBort2.TabIndex = 21;
+            this.taBort2.Text = "Ta bort";
+            this.taBort2.UseVisualStyleBackColor = true;
+            this.taBort2.Click += new System.EventHandler(this.taBort2_Click);
+            // 
+            // kategoriLabel2
+            // 
+            this.kategoriLabel2.AutoSize = true;
+            this.kategoriLabel2.Location = new System.Drawing.Point(884, 95);
+            this.kategoriLabel2.Name = "kategoriLabel2";
+            this.kategoriLabel2.Size = new System.Drawing.Size(49, 13);
+            this.kategoriLabel2.TabIndex = 22;
+            this.kategoriLabel2.Text = "Kategori:";
+            // 
+            // kategoriTabell
+            // 
+            this.kategoriTabell.BackgroundColor = System.Drawing.Color.White;
+            this.kategoriTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kategoriTabell.Location = new System.Drawing.Point(884, 174);
+            this.kategoriTabell.Name = "kategoriTabell";
+            this.kategoriTabell.RowHeadersVisible = false;
+            this.kategoriTabell.RowTemplate.Height = 23;
+            this.kategoriTabell.RowTemplate.ReadOnly = true;
+            this.kategoriTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
+            this.kategoriTabell.Size = new System.Drawing.Size(247, 160);
+            this.kategoriTabell.TabIndex = 23;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(935, 420);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.textBox1);
+            this.BackColor = System.Drawing.Color.SeaShell;
+            this.ClientSize = new System.Drawing.Size(1171, 548);
+            this.Controls.Add(this.kategoriTabell);
+            this.Controls.Add(this.kategoriLabel2);
+            this.Controls.Add(this.taBort2);
+            this.Controls.Add(this.ändra2);
+            this.Controls.Add(this.läggTill2);
+            this.Controls.Add(this.kategoriTextBox);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.avsnittLabel);
+            this.Controls.Add(this.beskrivningsTabell);
+            this.Controls.Add(this.återställ);
+            this.Controls.Add(this.filtrera);
+            this.Controls.Add(this.ändra);
+            this.Controls.Add(this.kategoriLabel);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.namnLabel);
+            this.Controls.Add(this.urlLabel);
+            this.Controls.Add(this.taBort);
+            this.Controls.Add(this.namnTextBox);
+            this.Controls.Add(this.avsnittsTabell);
+            this.Controls.Add(this.poddTabell);
+            this.Controls.Add(this.läggTill);
+            this.Controls.Add(this.urlTextBox);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.poddTabell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.avsnittsTabell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.beskrivningsTabell)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.kategoriTabell)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -129,12 +345,29 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.TextBox urlTextBox;
+        private System.Windows.Forms.Button läggTill;
+        private System.Windows.Forms.DataGridView poddTabell;
+        private System.Windows.Forms.DataGridView avsnittsTabell;
+        private System.Windows.Forms.TextBox namnTextBox;
+        private System.Windows.Forms.Button taBort;
+        private System.Windows.Forms.Label urlLabel;
+        private System.Windows.Forms.Label namnLabel;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label kategoriLabel;
+        private System.Windows.Forms.Button ändra;
+        private System.Windows.Forms.ComboBox filtrera;
+        private System.Windows.Forms.Button återställ;
+        private System.Windows.Forms.DataGridView beskrivningsTabell;
+        private System.Windows.Forms.Label avsnittLabel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox kategoriTextBox;
+        private System.Windows.Forms.Button läggTill2;
+        private System.Windows.Forms.Button ändra2;
+        private System.Windows.Forms.Button taBort2;
+        private System.Windows.Forms.Label kategoriLabel2;
+        private System.Windows.Forms.DataGridView kategoriTabell;
     }
 }
 

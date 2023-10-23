@@ -16,5 +16,6 @@ namespace DAL.Repository
         void Update(int index, T theObject);
         void Delete(string index);
         void SaveChanges();
+
     }
 }

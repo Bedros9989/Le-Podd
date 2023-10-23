@@ -9,14 +9,17 @@ using System.Threading.Tasks;
 namespace DAL.Repository
 {
     public class PodcastRepository : IPodcastrepository<Podcast>
+
     {
         Serializer<Podcast> PodcastSerializer;
         List<Podcast> ListAvPodcasts;
+
 
         public PodcastRepository()
         {
             ListAvPodcasts = new List<Podcast>();
             PodcastSerializer = new Serializer<Podcast>(nameof(ListAvPodcasts));
+            
 
             try
             {
@@ -97,5 +100,6 @@ namespace DAL.Repository
         {
             PodcastSerializer.Serialize(ListAvPodcasts);
         }
+
     }
 }

@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ArrayOfPodcast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Podcast>
-    <PodcastName>hej</PodcastName>
+    <PodcastName>Ursäkta</PodcastName>
     <Title>ursäkta</Title>
     <Category>YourCategory</Category>
     <URL>https://feed.pod.space/ursakta</URL>
@@ -83,9 +83,7 @@ Hör av er till oss på instagram så kan vi svara på era frågor, hjälpa er m
       </PodcastEpisode>
       <PodcastEpisode>
         <EpisodeName>175. Johanna på sjukhus i Cannes &amp; Bartenders är så fkn lata</EpisodeName>
-        <Description>
-        
-      </Description>
+        <Description />
       </PodcastEpisode>
       <PodcastEpisode>
         <EpisodeName>174. Stort sexavsnitt: Edvin diagnostiseras av sexolog!</EpisodeName>
@@ -615,9 +613,7 @@ Hör av er till oss på instagram så kan vi svara på era frågor, hjälpa er m
       </PodcastEpisode>
       <PodcastEpisode>
         <EpisodeName>91. Listar allt piss med julen &amp; Barn som äter kaviar</EpisodeName>
-        <Description>
-        
-      </Description>
+        <Description />
       </PodcastEpisode>
       <PodcastEpisode>
         <EpisodeName>90. Edvin dejtar en straight &amp; Mustiga Mauri får sig en känga</EpisodeName>
@@ -824,9 +820,7 @@ Hör av er till oss på instagram så kan vi svara på era frågor, hjälpa er m
       </PodcastEpisode>
       <PodcastEpisode>
         <EpisodeName>Specialavsnitt: Dancing Queens</EpisodeName>
-        <Description>
-        
-      </Description>
+        <Description />
       </PodcastEpisode>
       <PodcastEpisode>
         <EpisodeName>63. Allt om Grammis &amp; Edvins menssylt</EpisodeName>
@@ -1234,5 +1228,30 @@ ursäkta klipps av Niklas Runsten @niklasrunsten
       </PodcastEpisode>
     </Episodes>
     <AntalAvsnitt>189</AntalAvsnitt>
+  </Podcast>
+  <Podcast>
+    <PodcastName>hhh</PodcastName>
+    <Title>30s in the City med Hanna och Stella</Title>
+    <Category>YourCategory</Category>
+    <URL>https://rss.podplaystudio.com/1565.xml</URL>
+    <Episodes>
+      <PodcastEpisode>
+        <EpisodeName>3. Är Stellas kille en scam? </EpisodeName>
+        <Description>No description</Description>
+      </PodcastEpisode>
+      <PodcastEpisode>
+        <EpisodeName>2. Triangeldramat om skådisen aka Mr. Old Guy</EpisodeName>
+        <Description>No description</Description>
+      </PodcastEpisode>
+      <PodcastEpisode>
+        <EpisodeName>1. Den värsta dejt-upplevelsen någonsin</EpisodeName>
+        <Description>No description</Description>
+      </PodcastEpisode>
+      <PodcastEpisode>
+        <EpisodeName>Trailer - 30s in the city med Hanna och Stella</EpisodeName>
+        <Description>No description</Description>
+      </PodcastEpisode>
+    </Episodes>
+    <AntalAvsnitt>4</AntalAvsnitt>
   </Podcast>
 </ArrayOfPodcast>

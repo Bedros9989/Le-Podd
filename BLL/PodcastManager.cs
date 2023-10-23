@@ -15,9 +15,12 @@ namespace BLL
     public class PodcastManager
     {
         IPodcastrepository<Podcast> podcastRepository;
+        ICategoryRepository<Category> categoryRepository;
+
         public PodcastManager()
         {
             podcastRepository = new PodcastRepository();
+            categoryRepository = new CategoryRepository();
         }
 
         /*
@@ -66,6 +69,23 @@ namespace BLL
         {
             return podcastRepository.GetEpisodesByName(namn);
         }
+
+        public List<Category> RetrieveAllCategories()
+        {
+            return categoryRepository.GetAllCategories();
+        }
+
+        public void CreateEnCategory(Category category)
+        {
+            categoryRepository.InsertCategory(category);
+        }
+
+        public void DeleteACategory(string category)
+        {
+            categoryRepository.DeleteCategory(category);
+
+        }
+
 
     }
 }

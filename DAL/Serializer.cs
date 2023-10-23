@@ -35,12 +35,20 @@ namespace DAL
         public List<T> Deserialize()
         {
             List<T> listan;
-            XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>));
-            using (FileStream xmlIn =
-                new FileStream(fileName, FileMode.Open, FileAccess.Read))
+
+            if (File.Exists(fileName))  // Check if the file exists
             {
-                listan = (List<T>)xmlSerializer.Deserialize(xmlIn);
+                XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>));
+                using (FileStream xmlIn = new FileStream(fileName, FileMode.Open, FileAccess.Read))
+                {
+                    listan = (List<T>)xmlSerializer.Deserialize(xmlIn);
+                }
             }
+            else
+            {
+                listan = new List<T>();  // Provide a default value (an empty list)
+            }
+
             return listan;
         }
 

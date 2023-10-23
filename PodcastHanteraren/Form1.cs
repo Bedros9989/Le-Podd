@@ -12,6 +12,7 @@ using DAL.Repository; // Import your repository namespace
 using BLL;
 using Models;
 using System.Security.Policy;
+using System.Drawing.Text;
 
 namespace PodcastHanteraren
 {
@@ -24,15 +25,15 @@ namespace PodcastHanteraren
             podcastManager = new PodcastManager();
             tabellProperties();
             visaTabell();
-            
+            kategoriTabellen();
         }
 
         private void tabellProperties()
         {
-            dataGridView1.Columns.Clear();
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView2.Columns.Clear();
-            dataGridView2.AutoGenerateColumns = false;
+            poddTabell.Columns.Clear();
+            poddTabell.AutoGenerateColumns = false;
+            avsnittsTabell.Columns.Clear();
+            avsnittsTabell.AutoGenerateColumns = false;
 
             DataGridViewColumn antalAvsnittColumn = new DataGridViewTextBoxColumn
             {
@@ -45,7 +46,7 @@ namespace PodcastHanteraren
             DataGridViewColumn podcastNamnColumn = new DataGridViewTextBoxColumn
             {
                 Name = "PodcastName",
-                HeaderText = "Podcast Name",
+                HeaderText = "Podcast Namn",
                 DataPropertyName = "PodcastName",
                 Visible = true
             };
@@ -53,15 +54,16 @@ namespace PodcastHanteraren
             DataGridViewColumn titleColumn = new DataGridViewTextBoxColumn
             {
                 Name = "Title",
-                HeaderText = "Title",
+                HeaderText = "Titel",
                 DataPropertyName = "Title", 
-                Visible = true
+                Visible = true,
+                Width = 150
             };
 
             DataGridViewColumn categoryColumn = new DataGridViewTextBoxColumn
             {
                 Name = "Category",
-                HeaderText = "Category",
+                HeaderText = "Kategori",
                 DataPropertyName = "Category", 
                 Visible = true
             };
@@ -72,23 +74,34 @@ namespace PodcastHanteraren
                 HeaderText = "Avsnitt",
                 DataPropertyName = "EpisodeName",
                 Visible = true,
-                Width = 350
+                Width = 300
             };
 
-            dataGridView1.Columns.Add(antalAvsnittColumn);
-            dataGridView1.Columns.Add(podcastNamnColumn);
-            dataGridView1.Columns.Add(titleColumn);
-            dataGridView1.Columns.Add(categoryColumn);
-            dataGridView2.Columns.Add(avsnittNamnColumn);
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            DataGridViewColumn categoryNamnColumn = new DataGridViewTextBoxColumn
+            {
+                Name = "Kategorier",
+                HeaderText = "Kategorier",
+                DataPropertyName = "Name",
+                Visible = true,
+                Width = 244
+            };
+
+            poddTabell.Columns.Add(antalAvsnittColumn);
+            poddTabell.Columns.Add(podcastNamnColumn);
+            poddTabell.Columns.Add(titleColumn);
+            poddTabell.Columns.Add(categoryColumn);
+            kategoriTabell.Columns.Add(categoryNamnColumn);
+            avsnittsTabell.Columns.Add(avsnittNamnColumn);
+            poddTabell.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            kategoriTabell.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string rssUrl = textBox1.Text;
-            string namnet = textBox2.Text;
+            string rssUrl = urlTextBox.Text;
+            string namnet = namnTextBox.Text;
             SyndicationFeed feed = podcastManager.FetchRssData(rssUrl);
 
             if (feed != null)
@@ -124,29 +137,29 @@ namespace PodcastHanteraren
         public void visaTabell()
         {
             List<Podcast> allPodcasts = podcastManager.RetrieveAllPodcasts();
-            dataGridView1.DataSource = allPodcasts;
+            poddTabell.DataSource = allPodcasts;
         }
   
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0 && e.RowIndex < dataGridView1.Rows.Count) // Check for valid row index
+            if (e.RowIndex >= 0 && e.RowIndex < poddTabell.Rows.Count) // Check for valid row index
             {
-                DataGridViewRow selectedRow = dataGridView1.Rows[e.RowIndex];
+                DataGridViewRow selectedRow = poddTabell.Rows[e.RowIndex];
                 string podcastName = selectedRow.Cells["PodcastName"].Value.ToString();
 
                 // Call RetrieveAllPodcastEpisodes with the selected podcastName
-                dataGridView2.DataSource = null;
-                dataGridView2.DataSource = podcastManager.RetrieveAllPodcastEpisodes(podcastName);
+                avsnittsTabell.DataSource = null;
+                avsnittsTabell.DataSource = podcastManager.RetrieveAllPodcastEpisodes(podcastName);
             }
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (dataGridView1.SelectedRows.Count > 0)
+            if (poddTabell.SelectedRows.Count > 0)
             {
                 try
                 {
-                    string podcastName = dataGridView1.SelectedRows[0].Cells["PodcastName"].Value.ToString();
+                    string podcastName = poddTabell.SelectedRows[0].Cells["PodcastName"].Value.ToString();
                     podcastManager.DeletePodcast(podcastName);
                     visaTabell();
                 }
@@ -154,6 +167,61 @@ namespace PodcastHanteraren
                 {
                     MessageBox.Show($"An error occurred: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+            }
+        }
+
+        private void läggTill2_Click(object sender, EventArgs e)
+        {
+
+            string categoryName = kategoriTextBox.Text;
+
+            if (!string.IsNullOrEmpty(categoryName))
+            {
+                // Create a new Category object
+                Category newCategory = new Category(categoryName);
+
+                // Add the new category to your list of categories
+                podcastManager.CreateEnCategory(newCategory);
+
+                // Optionally, clear the text box for the next input
+                kategoriTextBox.Text = "";
+
+                // Refresh the category list in your form if needed
+                kategoriTabellen();
+            }
+            else
+            {
+                MessageBox.Show("Please enter a valid category name.");
+            }
+
+        }
+        private void kategoriTabellen()
+        {
+            kategoriTabell.DataSource = null;
+            List<Category> allCategories = podcastManager.RetrieveAllCategories();
+            kategoriTabell.DataSource = allCategories;
+        }
+
+        private void taBort2_Click(object sender, EventArgs e)
+        {
+            if (kategoriTabell.SelectedRows.Count > 0)
+            {
+                string categoryName = kategoriTabell.SelectedRows[0].Cells["Name"].Value.ToString();
+
+                try
+                {
+                    podcastManager.DeleteACategory(categoryName);
+                    MessageBox.Show($"Category '{categoryName}' has been deleted.");
+                    kategoriTabellen();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to delete the category: {ex.Message}");
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a category to delete.");
             }
         }
     }
