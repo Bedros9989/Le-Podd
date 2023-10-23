@@ -1,0 +1,13 @@
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\BLL.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\BLL.pdb
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\DAL.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\Models.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\System.ServiceModel.Syndication.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\DAL.pdb
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\Models.pdb
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\bin\Debug\System.ServiceModel.Syndication.xml
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\obj\Debug\BLL.csproj.CopyComplete
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\obj\Debug\BLL.dll
+\\Mac\Home\Documents\C#\PodcastHanteraren\BLL\obj\Debug\BLL.pdb
