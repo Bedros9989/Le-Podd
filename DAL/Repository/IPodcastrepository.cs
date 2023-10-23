@@ -10,10 +10,12 @@ namespace DAL.Repository
     public interface IPodcastrepository<T>
     {
         List<T> GetAll();
-        //T GetByName(string podcastName);
+        List<Podcast> GetByCategory(string category);
         List<PodcastEpisode> GetEpisodesByName(string name);
+        PodcastEpisode GetEpisode(string title);
         void Insert(T theObject);
-        void Update(int index, T theObject);
+        void UpdateName(int index, string name);
+        void UpdateCategory(int index, string category);
         void Delete(string index);
         void SaveChanges();
 

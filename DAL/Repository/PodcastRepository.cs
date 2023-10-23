@@ -44,28 +44,20 @@ namespace DAL.Repository
             }
             return listAvRegistreradePodcasts;
         }
-        /*
-        public Podcast GetByName(string podcastName)
+        
+        public List<Podcast> GetByCategory(string category)
         {
-            Podcast podcast = null;
-            foreach (var item in PodcastSerializer.Deserialize())
-            {
-                if (item.PodcastName.Equals(podcastName))
-                {
-                    podcast = item;
-                }
-            }
-            return podcast;
+            return ListAvPodcasts.Where(podcast => podcast.Category == category).ToList();
         }
-        */
 
-        public List<PodcastEpisode> GetEpisodesByName(string podcastName)
+
+        public List<PodcastEpisode> GetEpisodesByName(string title)
         {
             List<PodcastEpisode> episodesForPodcast = new List<PodcastEpisode>();
 
             foreach (var podcast in ListAvPodcasts)
             {
-                if (podcast.PodcastName == podcastName)
+                if (podcast.Title == title)
                 {
                     episodesForPodcast.AddRange(podcast.Episodes);
                 }
@@ -74,19 +66,46 @@ namespace DAL.Repository
             return episodesForPodcast;
         }
 
+        public PodcastEpisode GetEpisode(string title){
+            foreach (var podcast in ListAvPodcasts)
+            {
+                foreach (var episode in podcast.Episodes)
+                {
+                    if (episode.EpisodeName == title)
+                    {
+                        return episode; // Return the specific episode when found
+                    }
+                }
+            }
+
+            return null; // Return null if the episode is not found
+        }
+
+
         public void Insert(Podcast theObject)
         {
             ListAvPodcasts.Add(theObject);
             SaveChanges();
         }
 
-        public void Update(int index, Podcast theNewObject)
+        public void UpdateName(int index, string newName)
         {
             if (index >= 0)
             {
-                ListAvPodcasts[index] = theNewObject;
+                Podcast existingPodcast = ListAvPodcasts[index];
+                existingPodcast.PodcastName = newName;
+                SaveChanges();
             }
-            SaveChanges();
+        }
+
+        public void UpdateCategory(int index, string newCategory)
+        {
+            if (index >= 0)
+            {
+                Podcast existingPodcast = ListAvPodcasts[index];
+                existingPodcast.Category = newCategory;
+                SaveChanges();
+            }
         }
 
         public void Delete(string podcastName)

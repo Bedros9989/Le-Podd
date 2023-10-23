@@ -39,6 +39,16 @@ namespace DAL.Repository
             }
         }
 
+        public void UpdateName(int index, string newName)
+        {
+            if (index >= 0)
+            {
+                Category existingCategory = ListAvCategories[index];
+                existingCategory.Name = newName;
+                SaveCategories();
+            }
+        }
+
         public void SaveCategories()
         {
             categorySerializer.Serialize(ListAvCategories);

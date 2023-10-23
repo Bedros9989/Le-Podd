@@ -23,13 +23,12 @@ namespace BLL
             categoryRepository = new CategoryRepository();
         }
 
-        /*
+   
         public void CreatePodcast(string podcastName, string title, string url, string category, int AntalAvsnitt)
         {
             Podcast podd = new Podcast(podcastName, title, url, category, AntalAvsnitt);
-            podcastRepository.Insert(podd);
         }
-        */
+        
 
         public void CreateEnPodcast(Podcast podcast)
         {
@@ -70,6 +69,16 @@ namespace BLL
             return podcastRepository.GetEpisodesByName(namn);
         }
 
+        public PodcastEpisode RetrieveEpisode(string title)
+        {
+            return podcastRepository.GetEpisode(title);
+        }
+
+        public List<Podcast> SortByCategory(string category)
+        {
+            return podcastRepository.GetByCategory(category);
+        }
+
         public List<Category> RetrieveAllCategories()
         {
             return categoryRepository.GetAllCategories();
@@ -83,9 +92,22 @@ namespace BLL
         public void DeleteACategory(string category)
         {
             categoryRepository.DeleteCategory(category);
-
         }
 
+        public void UpdatePodcastName(int index, string newName)
+        {
+            podcastRepository.UpdateName(index, newName);
+        }
+
+        public void UpdatePodcastCategory(int index, string newCategory)
+        {
+            podcastRepository.UpdateCategory(index, newCategory);
+        }
+
+        public void UpdateCategoryName(int index, string newName)
+        {
+            categoryRepository.UpdateName(index, newName);
+        }
 
     }
 }

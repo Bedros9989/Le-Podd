@@ -36,3 +36,4 @@
 \\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.CopyComplete
 \\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.exe
 \\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.pdb
+\\Mac\Home\Documents\C#\PodcastHanteraren\Le-Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.Form2.resources

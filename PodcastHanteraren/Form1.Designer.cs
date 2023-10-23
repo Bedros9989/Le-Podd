@@ -36,13 +36,12 @@
             this.taBort = new System.Windows.Forms.Button();
             this.urlLabel = new System.Windows.Forms.Label();
             this.namnLabel = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.kategoriCombo = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.kategoriLabel = new System.Windows.Forms.Label();
             this.ändra = new System.Windows.Forms.Button();
             this.filtrera = new System.Windows.Forms.ComboBox();
             this.återställ = new System.Windows.Forms.Button();
-            this.beskrivningsTabell = new System.Windows.Forms.DataGridView();
             this.avsnittLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.kategoriTextBox = new System.Windows.Forms.TextBox();
@@ -51,9 +50,11 @@
             this.taBort2 = new System.Windows.Forms.Button();
             this.kategoriLabel2 = new System.Windows.Forms.Label();
             this.kategoriTabell = new System.Windows.Forms.DataGridView();
+            this.spara = new System.Windows.Forms.Button();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.spara2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.poddTabell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avsnittsTabell)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beskrivningsTabell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriTabell)).BeginInit();
             this.SuspendLayout();
             // 
@@ -80,6 +81,11 @@
             // 
             // poddTabell
             // 
+            this.poddTabell.AllowUserToAddRows = false;
+            this.poddTabell.AllowUserToDeleteRows = false;
+            this.poddTabell.AllowUserToOrderColumns = true;
+            this.poddTabell.AllowUserToResizeColumns = false;
+            this.poddTabell.AllowUserToResizeRows = false;
             this.poddTabell.BackgroundColor = System.Drawing.Color.White;
             this.poddTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.poddTabell.Location = new System.Drawing.Point(39, 174);
@@ -89,14 +95,18 @@
             this.poddTabell.RowHeadersWidth = 15;
             this.poddTabell.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.poddTabell.RowTemplate.Height = 23;
-            this.poddTabell.RowTemplate.ReadOnly = true;
             this.poddTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.poddTabell.Size = new System.Drawing.Size(453, 351);
             this.poddTabell.TabIndex = 2;
             this.poddTabell.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.poddTabell.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.poddTabell_CellDoubleClick);
             // 
             // avsnittsTabell
             // 
+            this.avsnittsTabell.AllowUserToAddRows = false;
+            this.avsnittsTabell.AllowUserToDeleteRows = false;
+            this.avsnittsTabell.AllowUserToResizeColumns = false;
+            this.avsnittsTabell.AllowUserToResizeRows = false;
             this.avsnittsTabell.BackgroundColor = System.Drawing.Color.White;
             this.avsnittsTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.avsnittsTabell.GridColor = System.Drawing.SystemColors.ControlText;
@@ -110,6 +120,7 @@
             this.avsnittsTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
             this.avsnittsTabell.Size = new System.Drawing.Size(334, 351);
             this.avsnittsTabell.TabIndex = 3;
+            this.avsnittsTabell.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.avsnittsTabell_CellClick);
             // 
             // namnTextBox
             // 
@@ -123,7 +134,7 @@
             // taBort
             // 
             this.taBort.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taBort.Location = new System.Drawing.Point(410, 127);
+            this.taBort.Location = new System.Drawing.Point(410, 100);
             this.taBort.Name = "taBort";
             this.taBort.Size = new System.Drawing.Size(81, 23);
             this.taBort.TabIndex = 5;
@@ -151,17 +162,19 @@
             this.namnLabel.TabIndex = 7;
             this.namnLabel.Text = "Namn (valfritt):";
             // 
-            // comboBox1
+            // kategoriCombo
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(118, 114);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(152, 22);
-            this.comboBox1.TabIndex = 8;
+            this.kategoriCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.kategoriCombo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kategoriCombo.FormattingEnabled = true;
+            this.kategoriCombo.Location = new System.Drawing.Point(118, 114);
+            this.kategoriCombo.Name = "kategoriCombo";
+            this.kategoriCombo.Size = new System.Drawing.Size(152, 22);
+            this.kategoriCombo.TabIndex = 8;
             // 
             // comboBox2
             // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox2.FormattingEnabled = true;
             this.comboBox2.Location = new System.Drawing.Point(276, 114);
@@ -182,21 +195,24 @@
             // ändra
             // 
             this.ändra.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ändra.Location = new System.Drawing.Point(410, 99);
+            this.ändra.Location = new System.Drawing.Point(410, 127);
             this.ändra.Name = "ändra";
             this.ändra.Size = new System.Drawing.Size(81, 23);
             this.ändra.TabIndex = 11;
             this.ändra.Text = "Ändra";
             this.ändra.UseVisualStyleBackColor = true;
+            this.ändra.Click += new System.EventHandler(this.ändra_Click);
             // 
             // filtrera
             // 
+            this.filtrera.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.filtrera.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.filtrera.FormattingEnabled = true;
             this.filtrera.Location = new System.Drawing.Point(118, 142);
             this.filtrera.Name = "filtrera";
             this.filtrera.Size = new System.Drawing.Size(152, 22);
             this.filtrera.TabIndex = 12;
+            this.filtrera.SelectedIndexChanged += new System.EventHandler(this.filtrera_SelectedIndexChanged);
             // 
             // återställ
             // 
@@ -207,18 +223,7 @@
             this.återställ.TabIndex = 13;
             this.återställ.Text = "Återställ";
             this.återställ.UseVisualStyleBackColor = true;
-            // 
-            // beskrivningsTabell
-            // 
-            this.beskrivningsTabell.BackgroundColor = System.Drawing.Color.White;
-            this.beskrivningsTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.beskrivningsTabell.Location = new System.Drawing.Point(884, 385);
-            this.beskrivningsTabell.Name = "beskrivningsTabell";
-            this.beskrivningsTabell.RowHeadersVisible = false;
-            this.beskrivningsTabell.RowTemplate.ReadOnly = true;
-            this.beskrivningsTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.beskrivningsTabell.Size = new System.Drawing.Size(247, 140);
-            this.beskrivningsTabell.TabIndex = 15;
+            this.återställ.Click += new System.EventHandler(this.återställ_Click);
             // 
             // avsnittLabel
             // 
@@ -234,7 +239,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(948, 349);
+            this.label1.Location = new System.Drawing.Point(952, 349);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(107, 22);
             this.label1.TabIndex = 17;
@@ -262,17 +267,18 @@
             // ändra2
             // 
             this.ändra2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ändra2.Location = new System.Drawing.Point(970, 143);
+            this.ändra2.Location = new System.Drawing.Point(1056, 144);
             this.ändra2.Name = "ändra2";
             this.ändra2.Size = new System.Drawing.Size(75, 25);
             this.ändra2.TabIndex = 20;
             this.ändra2.Text = "Ändra";
             this.ändra2.UseVisualStyleBackColor = true;
+            this.ändra2.Click += new System.EventHandler(this.ändra2_Click);
             // 
             // taBort2
             // 
             this.taBort2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.taBort2.Location = new System.Drawing.Point(1056, 143);
+            this.taBort2.Location = new System.Drawing.Point(971, 144);
             this.taBort2.Name = "taBort2";
             this.taBort2.Size = new System.Drawing.Size(75, 25);
             this.taBort2.TabIndex = 21;
@@ -291,8 +297,12 @@
             // 
             // kategoriTabell
             // 
+            this.kategoriTabell.AllowUserToAddRows = false;
+            this.kategoriTabell.AllowUserToDeleteRows = false;
+            this.kategoriTabell.AllowUserToResizeColumns = false;
+            this.kategoriTabell.AllowUserToResizeRows = false;
             this.kategoriTabell.BackgroundColor = System.Drawing.Color.White;
-            this.kategoriTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.kategoriTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.kategoriTabell.Location = new System.Drawing.Point(884, 174);
             this.kategoriTabell.Name = "kategoriTabell";
             this.kategoriTabell.RowHeadersVisible = false;
@@ -302,12 +312,46 @@
             this.kategoriTabell.Size = new System.Drawing.Size(247, 160);
             this.kategoriTabell.TabIndex = 23;
             // 
+            // spara
+            // 
+            this.spara.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spara.Location = new System.Drawing.Point(410, 127);
+            this.spara.Name = "spara";
+            this.spara.Size = new System.Drawing.Size(81, 23);
+            this.spara.TabIndex = 24;
+            this.spara.Text = "Spara";
+            this.spara.UseVisualStyleBackColor = true;
+            this.spara.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Location = new System.Drawing.Point(884, 386);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(247, 139);
+            this.richTextBox1.TabIndex = 25;
+            this.richTextBox1.Text = "";
+            // 
+            // spara2
+            // 
+            this.spara2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spara2.Location = new System.Drawing.Point(1056, 144);
+            this.spara2.Name = "spara2";
+            this.spara2.Size = new System.Drawing.Size(75, 25);
+            this.spara2.TabIndex = 26;
+            this.spara2.Text = "Spara";
+            this.spara2.UseVisualStyleBackColor = true;
+            this.spara2.Click += new System.EventHandler(this.spara2_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1171, 548);
+            this.Controls.Add(this.spara2);
+            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.spara);
             this.Controls.Add(this.kategoriTabell);
             this.Controls.Add(this.kategoriLabel2);
             this.Controls.Add(this.taBort2);
@@ -316,13 +360,12 @@
             this.Controls.Add(this.kategoriTextBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.avsnittLabel);
-            this.Controls.Add(this.beskrivningsTabell);
             this.Controls.Add(this.återställ);
             this.Controls.Add(this.filtrera);
             this.Controls.Add(this.ändra);
             this.Controls.Add(this.kategoriLabel);
             this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.kategoriCombo);
             this.Controls.Add(this.namnLabel);
             this.Controls.Add(this.urlLabel);
             this.Controls.Add(this.taBort);
@@ -336,7 +379,6 @@
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.poddTabell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.avsnittsTabell)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.beskrivningsTabell)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriTabell)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -353,13 +395,12 @@
         private System.Windows.Forms.Button taBort;
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Label namnLabel;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox kategoriCombo;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label kategoriLabel;
         private System.Windows.Forms.Button ändra;
         private System.Windows.Forms.ComboBox filtrera;
         private System.Windows.Forms.Button återställ;
-        private System.Windows.Forms.DataGridView beskrivningsTabell;
         private System.Windows.Forms.Label avsnittLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox kategoriTextBox;
@@ -368,6 +409,9 @@
         private System.Windows.Forms.Button taBort2;
         private System.Windows.Forms.Label kategoriLabel2;
         private System.Windows.Forms.DataGridView kategoriTabell;
+        private System.Windows.Forms.Button spara;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.Button spara2;
     }
 }
 

@@ -13,6 +13,8 @@ using BLL;
 using Models;
 using System.Security.Policy;
 using System.Drawing.Text;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using System.Reflection;
 
 namespace PodcastHanteraren
 {
@@ -26,6 +28,9 @@ namespace PodcastHanteraren
             tabellProperties();
             visaTabell();
             kategoriTabellen();
+            kategoriDropBox();
+            spara.Visible = false;
+            spara2.Visible = false;
         }
 
         private void tabellProperties()
@@ -34,6 +39,7 @@ namespace PodcastHanteraren
             poddTabell.AutoGenerateColumns = false;
             avsnittsTabell.Columns.Clear();
             avsnittsTabell.AutoGenerateColumns = false;
+            kategoriTabell.AutoGenerateColumns = false;
 
             DataGridViewColumn antalAvsnittColumn = new DataGridViewTextBoxColumn
             {
@@ -74,7 +80,7 @@ namespace PodcastHanteraren
                 HeaderText = "Avsnitt",
                 DataPropertyName = "EpisodeName",
                 Visible = true,
-                Width = 300
+                Width = 331
             };
 
             DataGridViewColumn categoryNamnColumn = new DataGridViewTextBoxColumn
@@ -86,6 +92,7 @@ namespace PodcastHanteraren
                 Width = 244
             };
 
+            
             poddTabell.Columns.Add(antalAvsnittColumn);
             poddTabell.Columns.Add(podcastNamnColumn);
             poddTabell.Columns.Add(titleColumn);
@@ -94,6 +101,19 @@ namespace PodcastHanteraren
             avsnittsTabell.Columns.Add(avsnittNamnColumn);
             poddTabell.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             kategoriTabell.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+
+        }
+
+        private void kategoriDropBox()
+        {
+            kategoriCombo.Items.Clear();
+            filtrera.Items.Clear();
+            List<Category> categories = podcastManager.RetrieveAllCategories();
+            foreach (Category category in categories)
+            {
+                kategoriCombo.Items.Add(category.Name);
+                filtrera.Items.Add(category.Name);
+            }
 
         }
 
@@ -108,7 +128,7 @@ namespace PodcastHanteraren
             {
                 string podcastName = namnet;
                 string title = feed.Title?.Text ?? "Unknown Podcast";
-                string category = "YourCategory";
+                string category = kategoriCombo.SelectedItem.ToString();
                 string url = rssUrl;
                 int AntalAvsnitt = 0;
 
@@ -136,6 +156,7 @@ namespace PodcastHanteraren
 
         public void visaTabell()
         {
+            poddTabell.ReadOnly = true;
             List<Podcast> allPodcasts = podcastManager.RetrieveAllPodcasts();
             poddTabell.DataSource = allPodcasts;
         }
@@ -145,7 +166,7 @@ namespace PodcastHanteraren
             if (e.RowIndex >= 0 && e.RowIndex < poddTabell.Rows.Count) // Check for valid row index
             {
                 DataGridViewRow selectedRow = poddTabell.Rows[e.RowIndex];
-                string podcastName = selectedRow.Cells["PodcastName"].Value.ToString();
+                string podcastName = selectedRow.Cells["Title"].Value.ToString();
 
                 // Call RetrieveAllPodcastEpisodes with the selected podcastName
                 avsnittsTabell.DataSource = null;
@@ -177,17 +198,11 @@ namespace PodcastHanteraren
 
             if (!string.IsNullOrEmpty(categoryName))
             {
-                // Create a new Category object
                 Category newCategory = new Category(categoryName);
-
-                // Add the new category to your list of categories
                 podcastManager.CreateEnCategory(newCategory);
-
-                // Optionally, clear the text box for the next input
                 kategoriTextBox.Text = "";
-
-                // Refresh the category list in your form if needed
                 kategoriTabellen();
+                kategoriDropBox();
             }
             else
             {
@@ -197,6 +212,7 @@ namespace PodcastHanteraren
         }
         private void kategoriTabellen()
         {
+            kategoriTabell.ReadOnly = true;
             kategoriTabell.DataSource = null;
             List<Category> allCategories = podcastManager.RetrieveAllCategories();
             kategoriTabell.DataSource = allCategories;
@@ -206,13 +222,14 @@ namespace PodcastHanteraren
         {
             if (kategoriTabell.SelectedRows.Count > 0)
             {
-                string categoryName = kategoriTabell.SelectedRows[0].Cells["Name"].Value.ToString();
+                string categoryName = kategoriTabell.SelectedRows[0].Cells["Kategorier"].Value.ToString();
 
                 try
                 {
                     podcastManager.DeleteACategory(categoryName);
                     MessageBox.Show($"Category '{categoryName}' has been deleted.");
                     kategoriTabellen();
+                    kategoriDropBox();
                 }
                 catch (Exception ex)
                 {
@@ -222,6 +239,142 @@ namespace PodcastHanteraren
             else
             {
                 MessageBox.Show("Please select a category to delete.");
+            }
+        }
+
+        private void filtrera_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string category = (filtrera.SelectedItem != null) ? filtrera.SelectedItem.ToString() : string.Empty;
+
+            if (category != null)
+            {
+                poddTabell.DataSource = null;
+                poddTabell.DataSource = podcastManager.SortByCategory(category);
+            }
+            else
+            {
+                poddTabell.DataSource = null;
+            }
+        }
+
+        private void ändra_Click(object sender, EventArgs e)
+        {
+            if (poddTabell.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = poddTabell.SelectedRows[0];
+                DataGridViewCell podcastNameCell = selectedRow.Cells["PodcastName"];
+
+                if (podcastNameCell != null)
+                {
+                    poddTabell.ReadOnly = false;
+                    poddTabell.CurrentCell = podcastNameCell;
+                    poddTabell.BeginEdit(true);
+                    spara.Visible = true;
+                }
+            }
+
+        }
+
+        private void återställ_Click(object sender, EventArgs e)
+        {
+            filtrera.SelectedIndex = -1;
+            visaTabell();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+            if (poddTabell.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = poddTabell.SelectedRows[0];
+
+                if (selectedRow.Cells["PodcastName"].Value != null)
+                {
+                    int selectedIndex = poddTabell.SelectedRows[0].Index;
+                    string newValue = selectedRow.Cells["PodcastName"].Value.ToString();
+
+                    podcastManager.UpdatePodcastName(selectedIndex,newValue);
+                    spara.Visible = false;
+                    visaTabell();
+                }
+            }
+        }
+
+        private void poddTabell_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == poddTabell.Columns["Category"].Index && e.RowIndex >= 0)
+            {
+                int selectedIndex = e.RowIndex;
+                string currentCategory = poddTabell.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                List<Category> categoryList = podcastManager.RetrieveAllCategories();
+                List<string> categoryNames = categoryList.Select(cat => cat.Name).ToList();
+
+                using (Form2 categoryChangeForm = new Form2(currentCategory, categoryNames))
+                {
+                    if (categoryChangeForm.ShowDialog() == DialogResult.OK)
+                    {
+                        string selectedCategory = categoryChangeForm.SelectedCategory;
+                        podcastManager.UpdatePodcastCategory(selectedIndex, selectedCategory);
+                        visaTabell();
+                    }
+                }
+            }
+        }
+
+        private void avsnittsTabell_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            if (e.RowIndex >= 0 && e.RowIndex < avsnittsTabell.Rows.Count) // Check for valid row index
+            {
+                DataGridViewRow selectedRow = avsnittsTabell.Rows[e.RowIndex];
+                string title = selectedRow.Cells["Avsnitt"].Value.ToString();
+
+                PodcastEpisode episode = podcastManager.RetrieveEpisode(title);
+
+                if (episode != null)
+                {
+                    richTextBox1.Text = episode.Description;
+                }
+                else
+                {
+                    richTextBox1.Text = "Episode not found.";
+                }
+            }
+
+        }
+
+        private void ändra2_Click(object sender, EventArgs e)
+        {
+            if (kategoriTabell.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = kategoriTabell.SelectedRows[0];
+                DataGridViewCell categoryNameCell = selectedRow.Cells["Kategorier"];
+
+                if (categoryNameCell != null)
+                {
+                    kategoriTabell.ReadOnly = false;
+                    kategoriTabell.CurrentCell = categoryNameCell;
+                    kategoriTabell.BeginEdit(true);
+                    spara2.Visible = true;
+                }
+            }
+        }
+
+        private void spara2_Click(object sender, EventArgs e)
+        {
+            if (kategoriTabell.SelectedRows.Count > 0)
+            {
+                DataGridViewRow selectedRow = kategoriTabell.SelectedRows[0];
+
+                if (selectedRow.Cells["Kategorier"].Value != null)
+                {
+                    int selectedIndex = kategoriTabell.SelectedRows[0].Index;
+                    string newValue = selectedRow.Cells["Kategorier"].Value.ToString();
+
+                    podcastManager.UpdateCategoryName(selectedIndex, newValue);
+                    spara2.Visible = false;
+                    kategoriTabellen();
+                }
             }
         }
     }

@@ -11,6 +11,7 @@ namespace DAL.Repository
     {
         List<T> GetAllCategories();
         void InsertCategory(T theObject);
+        void UpdateName(int index, string name);
         void DeleteCategory(string index);
         void SaveCategories();
 
