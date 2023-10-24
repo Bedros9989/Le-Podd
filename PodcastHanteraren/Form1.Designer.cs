@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.urlTextBox = new System.Windows.Forms.TextBox();
             this.läggTill = new System.Windows.Forms.Button();
             this.poddTabell = new System.Windows.Forms.DataGridView();
@@ -374,7 +375,10 @@
             this.Controls.Add(this.poddTabell);
             this.Controls.Add(this.läggTill);
             this.Controls.Add(this.urlTextBox);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(2);
+            this.MaximizeBox = false;
             this.Name = "Form1";
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.poddTabell)).EndInit();

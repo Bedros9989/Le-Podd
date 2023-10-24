@@ -21,16 +21,19 @@ namespace PodcastHanteraren
     public partial class Form1 : Form
     {
         PodcastManager podcastManager;
+        ValidationClass valideringsKlass;
         public Form1()
         {
             InitializeComponent();
             podcastManager = new PodcastManager();
+            valideringsKlass = new ValidationClass();
             tabellProperties();
             visaTabell();
             kategoriTabellen();
             kategoriDropBox();
             spara.Visible = false;
             spara2.Visible = false;
+            this.StartPosition = FormStartPosition.CenterScreen;
         }
 
         private void tabellProperties()
