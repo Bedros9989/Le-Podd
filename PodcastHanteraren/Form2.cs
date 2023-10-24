@@ -26,7 +26,6 @@ namespace PodcastHanteraren
 
         }
 
-
         private void läggTillInfo(){
 
             comboBox2.Text = currentCategory;
@@ -41,12 +40,10 @@ namespace PodcastHanteraren
             }
         }
 
-
         private void button1_Click(object sender, EventArgs e)
         {
             DialogResult = DialogResult.OK;
             Close();
-
         }
     }
 }

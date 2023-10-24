@@ -4,12 +4,12 @@
     <Name>Personliga berättelser</Name>
   </Category>
   <Category>
-    <Name>Komedi</Name>
-  </Category>
-  <Category>
     <Name>Skräck</Name>
   </Category>
   <Category>
     <Name>Dokumentär</Name>
+  </Category>
+  <Category>
+    <Name>Komedi</Name>
   </Category>
 </ArrayOfCategory>

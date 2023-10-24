@@ -53,10 +53,5 @@ namespace DAL.Repository
         {
             categorySerializer.Serialize(ListAvCategories);
         }
-
-
     }
-
-    
-
 }

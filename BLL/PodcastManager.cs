@@ -2,13 +2,11 @@
 using Models;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
 using System.Threading.Tasks;
 using System.ServiceModel.Syndication;
 using System.Xml;
-
+using System.Windows.Forms;
+using System.Linq;
 
 namespace BLL
 {
@@ -23,30 +21,53 @@ namespace BLL
             categoryRepository = new CategoryRepository();
         }
 
-   
-        public void CreatePodcast(string podcastName, string title, string url, string category, int AntalAvsnitt)
+        public void Create<T>(T item)
         {
-            Podcast podd = new Podcast(podcastName, title, url, category, AntalAvsnitt);
-        }
-        
-        public void CreateEnPodcast(Podcast podcast)
-        {
-            podcastRepository.Insert(podcast);
-        }
-        
-        public void DeletePodcast(string podcastName) 
-        {
-            podcastRepository.Delete(podcastName);
-
+            if (item is Category category)
+            {
+                categoryRepository.InsertCategory(category);
+            }
+            else if (item is Podcast podcast)
+            {
+                podcastRepository.Insert(podcast);
+            }
         }
 
-        public List<Podcast> RetrieveAllPodcasts()
+        public void Delete(string item, bool isCategory = false)
         {
-            return podcastRepository.GetAll();
+            if (isCategory)
+            {
+                categoryRepository.DeleteCategory(item);
+            }
+            else
+            {
+                podcastRepository.Delete(item);
+            }
+        }
+
+        public List<T> RetrieveAll<T>(string category = null)
+        {
+            if (typeof(T) == typeof(Category))
+            {
+                return categoryRepository.GetAllCategories() as List<T>;
+            }
+            else if (typeof(T) == typeof(Podcast))
+            {
+                return podcastRepository.GetAll(category) as List<T>;
+            }
+            else
+            {
+                return null;
+            }
         }
 
         public async Task<SyndicationFeed> FetchRssDataAsync(string rssUrl)
         {
+            if (!Uri.IsWellFormedUriString(rssUrl, UriKind.Absolute))
+            {
+                MessageBox.Show("Fel URL");
+                return null;
+            }
             try
             {
                 SyndicationFeed feed = await Task.Run(() =>
@@ -63,7 +84,6 @@ namespace BLL
             }
         }
 
-
         public List<PodcastEpisode> RetrieveAllPodcastEpisodes(string namn)
         {
             return podcastRepository.GetEpisodesByName(namn);
@@ -76,38 +96,31 @@ namespace BLL
 
         public List<Podcast> SortByCategory(string category)
         {
-            return podcastRepository.GetByCategory(category);
+            List<Podcast> allPodcasts = podcastRepository.GetAll();
+            return allPodcasts.Where(podcast => podcast.Category == category).ToList();
+
         }
 
-        public List<Category> RetrieveAllCategories()
+        public void Update(int index, string newValue, string propertyName = null)
         {
-            return categoryRepository.GetAllCategories();
+            if (string.IsNullOrEmpty(propertyName))
+            {
+                categoryRepository.UpdateName(index, newValue); 
+            }
+            else
+            {
+                switch (propertyName)
+                {
+                    case "Name":
+                        podcastRepository.Update(index, newValue, null);
+                        break;
+                    case "Category":
+                        podcastRepository.Update(index, null, newValue); 
+                        break;
+                    default:
+                        throw new ArgumentException("Invalid property name");
+                }
+            }
         }
-
-        public void CreateEnCategory(Category category)
-        {
-            categoryRepository.InsertCategory(category);
-        }
-
-        public void DeleteACategory(string category)
-        {
-            categoryRepository.DeleteCategory(category);
-        }
-
-        public void UpdatePodcastName(int index, string newName)
-        {
-            podcastRepository.Update(index, newName, null);
-        }
-
-        public void UpdatePodcastCategory(int index, string newCategory)
-        {
-            podcastRepository.Update(index, newCategory, null);
-        }
-
-        public void UpdateCategoryName(int index, string newName)
-        {
-            categoryRepository.UpdateName(index, newName);
-        }
-
     }
 }

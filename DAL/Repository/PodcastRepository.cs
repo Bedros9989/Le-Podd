@@ -19,7 +19,6 @@ namespace DAL.Repository
         {
             ListAvPodcasts = new List<Podcast>();
             PodcastSerializer = new Serializer<Podcast>(nameof(ListAvPodcasts));
-            
 
             try
             {
@@ -29,10 +28,9 @@ namespace DAL.Repository
             {
                 ListAvPodcasts = new List<Podcast>();
             }
-
         }
 
-        public List<Podcast> GetAll()
+        public List<Podcast> GetAll(string category = null)
         {
             List<Podcast> listAvRegistreradePodcasts = new List<Podcast>();
             try
@@ -41,13 +39,15 @@ namespace DAL.Repository
             }
             catch (Exception)
             {
+                
             }
+
+            if (category != null)
+            {
+                return listAvRegistreradePodcasts.Where(podcast => podcast.Category == category).ToList();
+            }
+
             return listAvRegistreradePodcasts;
-        }
-        
-        public List<Podcast> GetByCategory(string category)
-        {
-            return ListAvPodcasts.Where(podcast => podcast.Category == category).ToList();
         }
 
 
@@ -73,14 +73,13 @@ namespace DAL.Repository
                 {
                     if (episode.EpisodeName == title)
                     {
-                        return episode; // Return the specific episode when found
+                        return episode;
                     }
                 }
             }
 
-            return null; // Return null if the episode is not found
+            return null;
         }
-
 
         public void Insert(Podcast theObject)
         {
@@ -90,7 +89,7 @@ namespace DAL.Repository
 
         public void Update(int index, string newName = null, string newCategory = null)
         {
-            if (index >= 0)
+            if (index >= 0 && index < ListAvPodcasts.Count)
             {
                 Podcast existingPodcast = ListAvPodcasts[index];
 
@@ -106,19 +105,21 @@ namespace DAL.Repository
 
                 SaveChanges();
             }
+            else
+            {
+                
+            }
         }
 
-        public void Delete(string podcastName)
+        public void Delete(string title)
         {
-            ListAvPodcasts.RemoveAll(podcast => podcast.PodcastName == podcastName);
+            ListAvPodcasts.RemoveAll(podcast => podcast.Title == title);
             SaveChanges();
         }
-
 
         public void SaveChanges()
         {
             PodcastSerializer.Serialize(ListAvPodcasts);
         }
-
     }
 }
