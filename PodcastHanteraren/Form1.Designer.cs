@@ -38,7 +38,7 @@
             this.urlLabel = new System.Windows.Forms.Label();
             this.namnLabel = new System.Windows.Forms.Label();
             this.kategoriCombo = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.frekvensCombo = new System.Windows.Forms.ComboBox();
             this.kategoriLabel = new System.Windows.Forms.Label();
             this.ändra = new System.Windows.Forms.Button();
             this.filtrera = new System.Windows.Forms.ComboBox();
@@ -56,6 +56,7 @@
             this.spara2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.poddTabell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.avsnittsTabell)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.kategoriTabell)).BeginInit();
@@ -177,15 +178,17 @@
             this.kategoriCombo.Size = new System.Drawing.Size(152, 22);
             this.kategoriCombo.TabIndex = 8;
             // 
-            // comboBox2
+            // frekvensCombo
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(276, 114);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(92, 22);
-            this.comboBox2.TabIndex = 9;
+            this.frekvensCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.frekvensCombo.Font = new System.Drawing.Font("Arial", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.frekvensCombo.FormattingEnabled = true;
+            this.frekvensCombo.Location = new System.Drawing.Point(276, 114);
+            this.frekvensCombo.Name = "frekvensCombo";
+            this.frekvensCombo.Size = new System.Drawing.Size(92, 22);
+            this.frekvensCombo.TabIndex = 9;
+            this.frekvensCombo.DropDown += new System.EventHandler(this.frekvensCombo_DropDown);
+            this.frekvensCombo.DropDownClosed += new System.EventHandler(this.frekvensCombo_DropDownClosed);
             // 
             // kategoriLabel
             // 
@@ -251,7 +254,6 @@
             this.label1.Size = new System.Drawing.Size(189, 22);
             this.label1.TabIndex = 17;
             this.label1.Text = "Beskrivning av avsnitt";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // kategoriTextBox
             // 
@@ -366,7 +368,6 @@
             this.label2.Size = new System.Drawing.Size(148, 22);
             this.label2.TabIndex = 27;
             this.label2.Text = "Lägg till podcast";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -378,12 +379,22 @@
             this.label3.TabIndex = 28;
             this.label3.Text = "Lägg till kategori";
             // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(66, 145);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(47, 13);
+            this.label4.TabIndex = 29;
+            this.label4.Text = "Filtrera...";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SeaShell;
             this.ClientSize = new System.Drawing.Size(1171, 548);
+            this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.spara2);
@@ -401,7 +412,7 @@
             this.Controls.Add(this.filtrera);
             this.Controls.Add(this.ändra);
             this.Controls.Add(this.kategoriLabel);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.frekvensCombo);
             this.Controls.Add(this.kategoriCombo);
             this.Controls.Add(this.namnLabel);
             this.Controls.Add(this.urlLabel);
@@ -436,7 +447,7 @@
         private System.Windows.Forms.Label urlLabel;
         private System.Windows.Forms.Label namnLabel;
         private System.Windows.Forms.ComboBox kategoriCombo;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox frekvensCombo;
         private System.Windows.Forms.Label kategoriLabel;
         private System.Windows.Forms.Button ändra;
         private System.Windows.Forms.ComboBox filtrera;
@@ -454,6 +465,7 @@
         private System.Windows.Forms.Button spara2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
     }
 }
 

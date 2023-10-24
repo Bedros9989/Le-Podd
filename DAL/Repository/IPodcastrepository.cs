@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace DAL.Repository
 {
@@ -14,8 +15,7 @@ namespace DAL.Repository
         List<PodcastEpisode> GetEpisodesByName(string name);
         PodcastEpisode GetEpisode(string title);
         void Insert(T theObject);
-        void UpdateName(int index, string name);
-        void UpdateCategory(int index, string category);
+        void Update(int index, string name, string newCategory);
         void Delete(string index);
         void SaveChanges();
 

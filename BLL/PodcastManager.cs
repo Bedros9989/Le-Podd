@@ -29,13 +29,11 @@ namespace BLL
             Podcast podd = new Podcast(podcastName, title, url, category, AntalAvsnitt);
         }
         
-
         public void CreateEnPodcast(Podcast podcast)
         {
             podcastRepository.Insert(podcast);
         }
-
-
+        
         public void DeletePodcast(string podcastName) 
         {
             podcastRepository.Delete(podcastName);
@@ -98,12 +96,12 @@ namespace BLL
 
         public void UpdatePodcastName(int index, string newName)
         {
-            podcastRepository.UpdateName(index, newName);
+            podcastRepository.Update(index, newName, null);
         }
 
         public void UpdatePodcastCategory(int index, string newCategory)
         {
-            podcastRepository.UpdateCategory(index, newCategory);
+            podcastRepository.Update(index, newCategory, null);
         }
 
         public void UpdateCategoryName(int index, string newName)

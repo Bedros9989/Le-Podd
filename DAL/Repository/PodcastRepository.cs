@@ -88,22 +88,22 @@ namespace DAL.Repository
             SaveChanges();
         }
 
-        public void UpdateName(int index, string newName)
+        public void Update(int index, string newName = null, string newCategory = null)
         {
             if (index >= 0)
             {
                 Podcast existingPodcast = ListAvPodcasts[index];
-                existingPodcast.PodcastName = newName;
-                SaveChanges();
-            }
-        }
 
-        public void UpdateCategory(int index, string newCategory)
-        {
-            if (index >= 0)
-            {
-                Podcast existingPodcast = ListAvPodcasts[index];
-                existingPodcast.Category = newCategory;
+                if (newName != null)
+                {
+                    existingPodcast.PodcastName = newName;
+                }
+
+                if (newCategory != null)
+                {
+                    existingPodcast.Category = newCategory;
+                }
+
                 SaveChanges();
             }
         }

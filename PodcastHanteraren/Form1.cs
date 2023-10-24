@@ -31,6 +31,7 @@ namespace PodcastHanteraren
             visaTabell();
             kategoriTabellen();
             kategoriDropBox();
+            frekvens();
             spara.Visible = false;
             spara2.Visible = false;
             this.StartPosition = FormStartPosition.CenterScreen;
@@ -109,8 +110,6 @@ namespace PodcastHanteraren
 
         private void kategoriDropBox()
         {
-            kategoriCombo.Items.Clear();
-            filtrera.Items.Clear();
             List<Category> categories = podcastManager.RetrieveAllCategories();
             foreach (Category category in categories)
             {
@@ -118,6 +117,13 @@ namespace PodcastHanteraren
                 filtrera.Items.Add(category.Name);
             }
 
+        }
+
+        private void frekvens()
+        {
+            frekvensCombo.Items.Clear();
+            frekvensCombo.Items.Add("Frekvens");
+            frekvensCombo.SelectedIndex = 0;
         }
 
         private async void button1_Click(object sender, EventArgs e)
@@ -230,16 +236,22 @@ namespace PodcastHanteraren
             {
                 string categoryName = kategoriTabell.SelectedRows[0].Cells["Kategorier"].Value.ToString();
 
-                try
+                // Display a confirmation dialog
+                DialogResult result = MessageBox.Show($"Är du säker att du vill ta bort '{categoryName}'?", "Beräfta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (result == DialogResult.Yes)
                 {
-                    podcastManager.DeleteACategory(categoryName);
-                    MessageBox.Show($"Category '{categoryName}' has been deleted.");
-                    kategoriTabellen();
-                    kategoriDropBox();
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show($"Failed to delete the category: {ex.Message}");
+                    try
+                    {
+                        podcastManager.DeleteACategory(categoryName);
+                        MessageBox.Show($"Kategori '{categoryName}' har tagits bort.");
+                        kategoriTabellen();
+                        kategoriDropBox();
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show($"Failed to delete the category: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
             }
             else
@@ -384,14 +396,21 @@ namespace PodcastHanteraren
             }
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void frekvensCombo_DropDown(object sender, EventArgs e)
         {
-
+            if (frekvensCombo.Items.Count > 0 && frekvensCombo.Items[0].ToString() == "Frekvens")
+            {
+                frekvensCombo.Items.RemoveAt(0);
+            }
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void frekvensCombo_DropDownClosed(object sender, EventArgs e)
         {
-
+            if (frekvensCombo.SelectedIndex == -1)
+            {
+                frekvensCombo.Items.Insert(0, "Frekvens");
+                frekvensCombo.SelectedIndex = 0;
+            }
         }
     }
 }
