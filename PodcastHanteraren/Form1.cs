@@ -120,14 +120,14 @@ namespace PodcastHanteraren
 
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private async void button1_Click(object sender, EventArgs e)
         {
 
             if (ValidationClass.IsComboBoxEmpty(kategoriCombo) && ValidationClass.RutanÄrTom(urlTextBox, urlLabel))
             {
                 string rssUrl = urlTextBox.Text;
                 string namnet = namnTextBox.Text;
-                SyndicationFeed feed = podcastManager.FetchRssData(rssUrl);
+                SyndicationFeed feed = await podcastManager.FetchRssDataAsync(rssUrl); // Använd await här
 
                 if (feed != null)
                 {
@@ -141,7 +141,7 @@ namespace PodcastHanteraren
 
                     foreach (SyndicationItem item in feed.Items)
                     {
-                        string episodeName = item.Title?.Text ?? "Unkown Episode Name";
+                        string episodeName = item.Title?.Text ?? "Unknown Episode Name";
                         string description = item.Summary?.Text ?? "No description";
 
                         PodcastEpisode episode = new PodcastEpisode(episodeName, description);
@@ -155,7 +155,7 @@ namespace PodcastHanteraren
                 }
                 else
                 {
-                    // Handle the case where RSS data could not be fetched
+                    // Hantera fallet där RSS-data inte kunde hämtas
                 }
             }
         }

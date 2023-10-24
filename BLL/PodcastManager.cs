@@ -47,13 +47,15 @@ namespace BLL
             return podcastRepository.GetAll();
         }
 
-        public SyndicationFeed FetchRssData(string rssUrl)
+        public async Task<SyndicationFeed> FetchRssDataAsync(string rssUrl)
         {
             try
             {
-                XmlReader reader = XmlReader.Create(rssUrl);
-                SyndicationFeed feed = SyndicationFeed.Load(reader);
-                reader.Close();
+                SyndicationFeed feed = await Task.Run(() =>
+                {
+                    XmlReader reader = XmlReader.Create(rssUrl);
+                    return SyndicationFeed.Load(reader);
+                });
                 return feed;
             }
             catch (Exception ex)
@@ -61,8 +63,8 @@ namespace BLL
                 Console.WriteLine("Error fetching RSS data: " + ex.Message);
                 return null;
             }
-
         }
+
 
         public List<PodcastEpisode> RetrieveAllPodcastEpisodes(string namn)
         {
