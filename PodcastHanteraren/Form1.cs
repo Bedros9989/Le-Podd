@@ -123,37 +123,40 @@ namespace PodcastHanteraren
         private void button1_Click(object sender, EventArgs e)
         {
 
-            string rssUrl = urlTextBox.Text;
-            string namnet = namnTextBox.Text;
-            SyndicationFeed feed = podcastManager.FetchRssData(rssUrl);
-
-            if (feed != null)
+            if (ValidationClass.IsComboBoxEmpty(kategoriCombo) && ValidationClass.RutanÄrTom(urlTextBox, urlLabel))
             {
-                string podcastName = namnet;
-                string title = feed.Title?.Text ?? "Unknown Podcast";
-                string category = kategoriCombo.SelectedItem.ToString();
-                string url = rssUrl;
-                int AntalAvsnitt = 0;
+                string rssUrl = urlTextBox.Text;
+                string namnet = namnTextBox.Text;
+                SyndicationFeed feed = podcastManager.FetchRssData(rssUrl);
 
-                Podcast podcasten = new Podcast(podcastName, title, url, category, AntalAvsnitt);
-
-                foreach (SyndicationItem item in feed.Items)
+                if (feed != null)
                 {
-                    string episodeName = item.Title?.Text ?? "Unkown Episode Name";
-                    string description = item.Summary?.Text ?? "No description";
-                    
-                    PodcastEpisode episode = new PodcastEpisode(episodeName, description);
+                    string podcastName = namnet;
+                    string title = feed.Title?.Text ?? "Unknown Podcast";
+                    string category = kategoriCombo.SelectedItem.ToString();
+                    string url = rssUrl;
+                    int AntalAvsnitt = 0;
 
-                    podcasten.Episodes.Add(episode);
+                    Podcast podcasten = new Podcast(podcastName, title, url, category, AntalAvsnitt);
+
+                    foreach (SyndicationItem item in feed.Items)
+                    {
+                        string episodeName = item.Title?.Text ?? "Unkown Episode Name";
+                        string description = item.Summary?.Text ?? "No description";
+
+                        PodcastEpisode episode = new PodcastEpisode(episodeName, description);
+
+                        podcasten.Episodes.Add(episode);
+                    }
+                    podcasten.AntalAvsnitt = podcasten.Episodes.Count;
+                    Console.WriteLine($"Episodes count for podcast '{podcastName}': {podcasten.Episodes.Count}");
+                    podcastManager.CreateEnPodcast(podcasten);
+                    visaTabell();
                 }
-                podcasten.AntalAvsnitt = podcasten.Episodes.Count;
-                Console.WriteLine($"Episodes count for podcast '{podcastName}': {podcasten.Episodes.Count}");
-                podcastManager.CreateEnPodcast(podcasten);
-                visaTabell();
-            }
-            else
-            {
-                // Handle the case where RSS data could not be fetched
+                else
+                {
+                    // Handle the case where RSS data could not be fetched
+                }
             }
         }
 
