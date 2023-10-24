@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <ArrayOfCategory xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Category>
-    <Name>Personliga Berättlser</Name>
+    <Name>Personliga berättelser</Name>
   </Category>
   <Category>
     <Name>Historia</Name>
@@ -11,5 +11,8 @@
   </Category>
   <Category>
     <Name>Skräck</Name>
+  </Category>
+  <Category>
+    <Name>Dokumentär</Name>
   </Category>
 </ArrayOfCategory>

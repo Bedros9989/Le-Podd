@@ -1,32 +1,7 @@
 <?xml version="1.0"?>
 <ArrayOfPodcast xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Podcast>
-    <PodcastName>Nåt</PodcastName>
-    <Title>30s in the City med Hanna och Stella</Title>
-    <Category>Skräck</Category>
-    <URL>https://rss.podplaystudio.com/1565.xml</URL>
-    <Episodes>
-      <PodcastEpisode>
-        <EpisodeName>3. Är Stellas kille en scam? </EpisodeName>
-        <Description>No description</Description>
-      </PodcastEpisode>
-      <PodcastEpisode>
-        <EpisodeName>2. Triangeldramat om skådisen aka Mr. Old Guy</EpisodeName>
-        <Description>No description</Description>
-      </PodcastEpisode>
-      <PodcastEpisode>
-        <EpisodeName>1. Den värsta dejt-upplevelsen någonsin</EpisodeName>
-        <Description>No description</Description>
-      </PodcastEpisode>
-      <PodcastEpisode>
-        <EpisodeName>Trailer - 30s in the city med Hanna och Stella</EpisodeName>
-        <Description>No description</Description>
-      </PodcastEpisode>
-    </Episodes>
-    <AntalAvsnitt>4</AntalAvsnitt>
-  </Podcast>
-  <Podcast>
-    <PodcastName>UrsäktaPodden</PodcastName>
+    <PodcastName>Ursäkta</PodcastName>
     <Title>ursäkta</Title>
     <Category>Komedi</Category>
     <URL>https://feed.pod.space/ursakta</URL>
