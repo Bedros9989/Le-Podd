@@ -160,8 +160,12 @@ namespace PodcastHanteraren
                         {
                             if (libraryForm is LibraryForm)
                             {
-                                ((LibraryForm)libraryForm).PopulatePodcastsListView();
                                 MessageBox.Show("Ny podcast har registrerats");
+                                AddNewForm addNew = Application.OpenForms.OfType<AddNewForm>().FirstOrDefault();
+                                ((LibraryForm)libraryForm).PopulatePodcastsListView();
+                                addNew?.Close();
+                                mainForm.initializeAddNew();
+                                mainForm.ShowChildForm("AddNew");
                             }
                         }
                     }

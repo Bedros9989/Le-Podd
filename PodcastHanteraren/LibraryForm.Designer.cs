@@ -38,6 +38,7 @@
             // listViewPodcasts
             // 
             this.listViewPodcasts.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.listViewPodcasts.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.listViewPodcasts.HideSelection = false;
             this.listViewPodcasts.Location = new System.Drawing.Point(27, 79);
             this.listViewPodcasts.Name = "listViewPodcasts";
@@ -73,7 +74,7 @@
             this.kategoriCombo.TabIndex = 35;
             this.kategoriCombo.SelectedIndexChanged += new System.EventHandler(this.kategoriCombo_SelectedIndexChanged);
             // 
-            // Form4
+            // LibraryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -82,7 +83,7 @@
             this.Controls.Add(this.kategoriCombo);
             this.Controls.Add(this.sök);
             this.Controls.Add(this.listViewPodcasts);
-            this.Name = "Form4";
+            this.Name = "LibraryForm";
             this.Text = "Form4";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -35,10 +35,10 @@
             this.läggTillKnapp = new System.Windows.Forms.Button();
             this.bibliotekKnapp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.video = new AxWMPLib.AxWindowsMediaPlayer();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
@@ -47,7 +47,7 @@
             // 
             // panelMenu
             // 
-            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(224)))));
             this.panelMenu.Controls.Add(this.avslutaKnapp);
             this.panelMenu.Controls.Add(this.kategorierKnapp);
             this.panelMenu.Controls.Add(this.läggTillKnapp);
@@ -58,54 +58,64 @@
             // 
             // avslutaKnapp
             // 
+            this.avslutaKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             resources.ApplyResources(this.avslutaKnapp, "avslutaKnapp");
             this.avslutaKnapp.FlatAppearance.BorderSize = 0;
             this.avslutaKnapp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.avslutaKnapp.Image = global::PodcastHanteraren.Properties.Resources.shutdown;
             this.avslutaKnapp.Name = "avslutaKnapp";
-            this.avslutaKnapp.UseVisualStyleBackColor = true;
+            this.avslutaKnapp.UseVisualStyleBackColor = false;
             this.avslutaKnapp.Click += new System.EventHandler(this.avslutaKnapp_Click);
             // 
             // kategorierKnapp
             // 
-            resources.ApplyResources(this.kategorierKnapp, "kategorierKnapp");
+            this.kategorierKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.kategorierKnapp.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.kategorierKnapp, "kategorierKnapp");
             this.kategorierKnapp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.kategorierKnapp.Image = global::PodcastHanteraren.Properties.Resources.options_lines;
             this.kategorierKnapp.Name = "kategorierKnapp";
-            this.kategorierKnapp.UseVisualStyleBackColor = true;
+            this.kategorierKnapp.UseVisualStyleBackColor = false;
             this.kategorierKnapp.Click += new System.EventHandler(this.kategorier_Click);
             // 
             // läggTillKnapp
             // 
-            resources.ApplyResources(this.läggTillKnapp, "läggTillKnapp");
+            this.läggTillKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.läggTillKnapp.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.läggTillKnapp, "läggTillKnapp");
             this.läggTillKnapp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.läggTillKnapp.Image = global::PodcastHanteraren.Properties.Resources.add1;
             this.läggTillKnapp.Name = "läggTillKnapp";
-            this.läggTillKnapp.UseVisualStyleBackColor = true;
+            this.läggTillKnapp.UseVisualStyleBackColor = false;
             this.läggTillKnapp.Click += new System.EventHandler(this.läggTill_Click_1);
             // 
             // bibliotekKnapp
             // 
-            resources.ApplyResources(this.bibliotekKnapp, "bibliotekKnapp");
+            this.bibliotekKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.bibliotekKnapp.FlatAppearance.BorderSize = 0;
+            resources.ApplyResources(this.bibliotekKnapp, "bibliotekKnapp");
             this.bibliotekKnapp.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.bibliotekKnapp.Image = global::PodcastHanteraren.Properties.Resources.library;
             this.bibliotekKnapp.Name = "bibliotekKnapp";
-            this.bibliotekKnapp.UseVisualStyleBackColor = true;
+            this.bibliotekKnapp.UseVisualStyleBackColor = false;
             this.bibliotekKnapp.Click += new System.EventHandler(this.bibliotek_Click);
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(90)))));
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.panel1.Controls.Add(this.label1);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Name = "label1";
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(76)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(224)))));
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
@@ -124,12 +134,6 @@
             resources.ApplyResources(this.video, "video");
             this.video.Name = "video";
             this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
-            // 
-            // label1
-            // 
-            resources.ApplyResources(this.label1, "label1");
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Name = "label1";
             // 
             // MainForm
             // 
