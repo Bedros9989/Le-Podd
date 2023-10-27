@@ -31,3 +31,14 @@
 \\Mac\Home\Documents\GitHub\Le-Podd\DAL\obj\Debug\DAL.csproj.CopyComplete
 \\Mac\Home\Documents\GitHub\Le-Podd\DAL\obj\Debug\DAL.dll
 \\Mac\Home\Documents\GitHub\Le-Podd\DAL\obj\Debug\DAL.pdb
+\\Mac\Home\Documents\C#\Le Podd\DAL\bin\Debug\DAL.dll
+\\Mac\Home\Documents\C#\Le Podd\DAL\bin\Debug\DAL.pdb
+\\Mac\Home\Documents\C#\Le Podd\DAL\bin\Debug\Models.dll
+\\Mac\Home\Documents\C#\Le Podd\DAL\bin\Debug\System.ServiceModel.Syndication.dll
+\\Mac\Home\Documents\C#\Le Podd\DAL\bin\Debug\Models.pdb
+\\Mac\Home\Documents\C#\Le Podd\DAL\bin\Debug\System.ServiceModel.Syndication.xml
+\\Mac\Home\Documents\C#\Le Podd\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\C#\Le Podd\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+\\Mac\Home\Documents\C#\Le Podd\DAL\obj\Debug\DAL.csproj.CopyComplete
+\\Mac\Home\Documents\C#\Le Podd\DAL\obj\Debug\DAL.dll
+\\Mac\Home\Documents\C#\Le Podd\DAL\obj\Debug\DAL.pdb
