@@ -105,7 +105,7 @@ namespace BLL
         {
             if (string.IsNullOrEmpty(propertyName))
             {
-                categoryRepository.UpdateName(index, newValue); 
+                categoryRepository.UpdateName(index, newValue);
             }
             else
             {
@@ -115,7 +115,7 @@ namespace BLL
                         podcastRepository.Update(index, newValue, null);
                         break;
                     case "Category":
-                        podcastRepository.Update(index, null, newValue); 
+                        podcastRepository.Update(index, null, newValue);
                         break;
                     default:
                         throw new ArgumentException("Invalid property name");
