@@ -2,9 +2,7 @@
 using Models;
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Windows.Forms;
 
 namespace PodcastHanteraren
@@ -35,7 +33,7 @@ namespace PodcastHanteraren
             }
         }
 
-        public void PopulatePodcastsListView()
+        internal void PopulatePodcastsListView()
         {
             listViewPodcasts.Items.Clear();
             imageList1.Images.Clear(); 
@@ -96,16 +94,7 @@ namespace PodcastHanteraren
         {
             listViewPodcasts.Items.Clear();
             string category = (kategoriCombo.SelectedItem != null) ? kategoriCombo.SelectedItem.ToString() : string.Empty;
-            List<Podcast> filteredPodcasts;
-            if (string.IsNullOrWhiteSpace(category))
-            {
-                filteredPodcasts = podcastManager.RetrieveAll<Podcast>();
-            }
-            else
-            {
-                filteredPodcasts = podcastManager.SortByCategory(category);
-            }
-
+            List<Podcast> filteredPodcasts = podcastManager.SortByCategory(category);
             PopulateListViewWithPodcasts(filteredPodcasts);
         }
 
@@ -129,30 +118,12 @@ namespace PodcastHanteraren
         {
             string searchText = sök.Text;
             listViewPodcasts.Items.Clear();
-            List<Podcast> allPodcasts = podcastManager.RetrieveAll<Podcast>();
-
-            List<Podcast> filteredPodcasts = allPodcasts
-                .Where(podcast =>
-                    podcast.Title.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 || // Search in Title
-                    (!string.IsNullOrEmpty(podcast.PodcastName) && podcast.PodcastName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0) // Search in PodcastName
-                )
-                .ToList();
-
-            foreach (Podcast podcast in filteredPodcasts)
-            {
-                string displayText = string.IsNullOrEmpty(podcast.PodcastName) ? podcast.Title : podcast.PodcastName;
-                ListViewItem item = new ListViewItem(displayText)
-                {
-                    ImageKey = podcast.Title,
-                    Tag = podcast
-                };
-                listViewPodcasts.Items.Add(item);
-            }
+            List<Podcast> filteredPodcasts = podcastManager.SearchPodcasts(searchText);
+            PopulateListViewWithPodcasts(filteredPodcasts);
         }
 
         private void sök_Enter(object sender, EventArgs e)
         {
-
             if (textBoxFirstClick)
             {
                 sök.Text = "";

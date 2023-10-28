@@ -141,9 +141,25 @@ namespace PodcastHanteraren
             this.Close();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void start_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            foreach (PodcastForm podcastForm in podcastFormInstances)
+            {
+                podcastForm.Close();
+                podcastForm.Dispose();
+            }
+            podcastFormInstances.Clear();
+
+            foreach (var kvp in childForms)
+            {
+                kvp.Value.Close();
+            }
+            childForms.Clear();
+            initializeLibrary();
+            initializeAddNew();
+            initializeCategory();
+            video.Show();
         }
     }
 }

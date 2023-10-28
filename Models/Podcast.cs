@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 
-
 namespace Models
 {
     [Serializable]
@@ -14,7 +13,6 @@ namespace Models
         public List<PodcastEpisode> Episodes { get; set; }
         public int AntalAvsnitt { get; set; }
         public string ImageURL { get; set; }
-
 
         public Podcast()
         {

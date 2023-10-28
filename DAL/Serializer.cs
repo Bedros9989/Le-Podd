@@ -18,11 +18,11 @@ namespace DAL
                 fileName = value;
             }
         }
-        public Serializer(string fName)
+        internal Serializer(string fName)
         {
             FileName = fName + ".xml";
         }
-        public void Serialize(List<T> list)
+        internal void Serialize(List<T> list)
         {
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<T>));
             using (FileStream xmlOut =
@@ -32,7 +32,7 @@ namespace DAL
             }
         }
 
-        public List<T> Deserialize()
+        internal List<T> Deserialize()
         {
             List<T> listan;
 

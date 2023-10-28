@@ -14,7 +14,6 @@ namespace DAL.Repository
         Serializer<Podcast> PodcastSerializer;
         List<Podcast> ListAvPodcasts;
 
-
         public PodcastRepository()
         {
             ListAvPodcasts = new List<Podcast>();
@@ -49,7 +48,6 @@ namespace DAL.Repository
 
             return listAvRegistreradePodcasts;
         }
-
 
         public List<PodcastEpisode> GetEpisodesByName(string title)
         {

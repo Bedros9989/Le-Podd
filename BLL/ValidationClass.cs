@@ -7,7 +7,6 @@ namespace BLL
 {
     public class ValidationClass
     {
-     
         public static bool RutanÄrTom(TextBox enRuta, Label namn)
         {
             bool resultat = true;

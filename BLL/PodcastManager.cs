@@ -33,6 +33,29 @@ namespace BLL
             }
         }
 
+        public List<Podcast> SortByCategory(string category)
+        {
+            if (string.IsNullOrWhiteSpace(category))
+            {
+                return RetrieveAll<Podcast>();
+            }
+            return RetrieveAll<Podcast>().Where(podcast => podcast.Category == category).ToList();
+        }
+
+        public List<Podcast> SearchPodcasts(string searchText)
+        {
+            if (string.IsNullOrEmpty(searchText))
+            {
+                return RetrieveAll<Podcast>();
+            }
+
+            return RetrieveAll<Podcast>()
+                .Where(podcast =>
+                    podcast.Title.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    (!string.IsNullOrEmpty(podcast.PodcastName) && podcast.PodcastName.IndexOf(searchText, StringComparison.OrdinalIgnoreCase) >= 0))
+                .ToList();
+        }
+
         public void Delete(string item, bool isCategory = false)
         {
             if (isCategory)
@@ -92,13 +115,6 @@ namespace BLL
         public PodcastEpisode RetrieveEpisode(string title)
         {
             return podcastRepository.GetEpisode(title);
-        }
-
-        public List<Podcast> SortByCategory(string category)
-        {
-            List<Podcast> allPodcasts = podcastRepository.GetAll();
-            return allPodcasts.Where(podcast => podcast.Category == category).ToList();
-
         }
 
         public void Update(int index, string newValue, string propertyName = null)

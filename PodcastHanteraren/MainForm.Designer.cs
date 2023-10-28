@@ -38,7 +38,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.video = new AxWMPLib.AxWindowsMediaPlayer();
-            this.button1 = new System.Windows.Forms.Button();
+            this.startKnapp = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
@@ -103,7 +103,7 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
-            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.startKnapp);
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
@@ -129,13 +129,14 @@
             this.video.Name = "video";
             this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
             // 
-            // button1
+            // startKnapp
             // 
-            resources.ApplyResources(this.button1, "button1");
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Name = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            resources.ApplyResources(this.startKnapp, "startKnapp");
+            this.startKnapp.FlatAppearance.BorderSize = 0;
+            this.startKnapp.ForeColor = System.Drawing.Color.White;
+            this.startKnapp.Name = "startKnapp";
+            this.startKnapp.UseVisualStyleBackColor = true;
+            this.startKnapp.Click += new System.EventHandler(this.start_Click);
             // 
             // MainForm
             // 
@@ -166,6 +167,6 @@
         private System.Windows.Forms.Button läggTillKnapp;
         private System.Windows.Forms.Button avslutaKnapp;
         private AxWMPLib.AxWindowsMediaPlayer video;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button startKnapp;
     }
 }

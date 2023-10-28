@@ -21,7 +21,6 @@ namespace PodcastHanteraren
             podcastManager = new PodcastManager();
             kategoriDropBox();
             start();
-
         }
 
         private void start()
@@ -44,7 +43,6 @@ namespace PodcastHanteraren
             {
                 kategoriCombo.Items.Add(category.Name);
             }
-
         }
 
         private async void sök_Click(object sender, EventArgs e)
@@ -67,7 +65,6 @@ namespace PodcastHanteraren
                 antalAvsnitt.Visible = true;
                 läggTillKnapp.Visible = true;
                 antalAvsnitt.Text = $"Episodes: {episodeCount}";
-
                 
                 string imageUrl = feed.ImageUrl?.ToString();
 
@@ -80,7 +77,6 @@ namespace PodcastHanteraren
                         using (MemoryStream ms = new MemoryStream(imageBytes))
                         {
                             Image podcastImage = Image.FromStream(ms);
-                            // Display the image in the PictureBox
                             pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
                             pictureBox1.Image = podcastImage;
                         }
@@ -89,8 +85,7 @@ namespace PodcastHanteraren
                 }
                 
                 else
-                {
-                    
+                {   
                     pictureBox1.Image = null;
                 }
             }
@@ -125,7 +120,6 @@ namespace PodcastHanteraren
 
                     Podcast podcasten = new Podcast(podcastName, title, url, category, AntalAvsnitt);
 
-                    // Extract the image URL from the feed
                     string imageUrl = feed.ImageUrl?.ToString();
 
                     if (!string.IsNullOrEmpty(imageUrl))
@@ -140,7 +134,6 @@ namespace PodcastHanteraren
 
                         PodcastEpisode episode = new PodcastEpisode(episodeName, description);
                         podcasten.Episodes.Add(episode);
-
                     }
 
                     podcasten.AntalAvsnitt = podcasten.Episodes.Count;

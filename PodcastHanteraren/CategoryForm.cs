@@ -43,8 +43,7 @@ namespace PodcastHanteraren
             kategoriTabell.DataSource = null;
             List<Category> allCategories = podcastManager.RetrieveAll<Category>();
             kategoriTabell.DataSource = allCategories;
-            kategoriTabell.AutoGenerateColumns = false;
-            
+            kategoriTabell.AutoGenerateColumns = false;   
         }
 
         private void kategoriTabellen()
