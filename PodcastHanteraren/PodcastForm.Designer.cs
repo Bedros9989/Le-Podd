@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titelLabel = new System.Windows.Forms.Label();
             this.kategoriLabel = new System.Windows.Forms.Label();
             this.ändraKnapp = new System.Windows.Forms.Button();
@@ -68,7 +68,7 @@
             // 
             // ändraKnapp
             // 
-            this.ändraKnapp.BackColor = System.Drawing.Color.LightBlue;
+            this.ändraKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.ändraKnapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ändraKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ändraKnapp.Location = new System.Drawing.Point(291, 93);
@@ -94,8 +94,8 @@
             this.avsnittsTabell.Name = "avsnittsTabell";
             this.avsnittsTabell.RowHeadersVisible = false;
             this.avsnittsTabell.RowHeadersWidth = 82;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.avsnittsTabell.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.avsnittsTabell.RowsDefaultCellStyle = dataGridViewCellStyle1;
             this.avsnittsTabell.RowTemplate.Height = 35;
             this.avsnittsTabell.RowTemplate.ReadOnly = true;
             this.avsnittsTabell.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;

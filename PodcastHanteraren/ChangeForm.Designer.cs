@@ -47,13 +47,15 @@
             // 
             // okKnapp
             // 
+            this.okKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.okKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.okKnapp.ForeColor = System.Drawing.Color.Black;
             this.okKnapp.Location = new System.Drawing.Point(109, 154);
             this.okKnapp.Name = "okKnapp";
             this.okKnapp.Size = new System.Drawing.Size(92, 33);
             this.okKnapp.TabIndex = 2;
             this.okKnapp.Text = "OK";
-            this.okKnapp.UseVisualStyleBackColor = true;
+            this.okKnapp.UseVisualStyleBackColor = false;
             this.okKnapp.Click += new System.EventHandler(this.ok_Click);
             // 
             // comboBox2
@@ -86,7 +88,7 @@
             this.label2.TabIndex = 4;
             this.label2.Text = "Ny kategori:";
             // 
-            // Form2
+            // ChangeForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -99,7 +101,7 @@
             this.Controls.Add(this.comboBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
-            this.Name = "Form2";
+            this.Name = "ChangeForm";
             this.Text = "Kategorier";
             this.ResumeLayout(false);
             this.PerformLayout();

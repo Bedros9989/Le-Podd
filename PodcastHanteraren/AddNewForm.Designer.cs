@@ -38,12 +38,10 @@
             this.urlTextBox = new System.Windows.Forms.TextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.läggTillKnapp = new System.Windows.Forms.Button();
-            this.intervallLabel = new System.Windows.Forms.Label();
             this.antalAvsnitt = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.namnTextBox = new System.Windows.Forms.TextBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
-            this.intervallCombo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -109,7 +107,7 @@
             // 
             // sökKnapp
             // 
-            this.sökKnapp.BackColor = System.Drawing.Color.LightBlue;
+            this.sökKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.sökKnapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sökKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.sökKnapp.Location = new System.Drawing.Point(130, 147);
@@ -140,10 +138,10 @@
             // 
             // läggTillKnapp
             // 
-            this.läggTillKnapp.BackColor = System.Drawing.Color.LightBlue;
+            this.läggTillKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.läggTillKnapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.läggTillKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.läggTillKnapp.Location = new System.Drawing.Point(458, 360);
+            this.läggTillKnapp.Location = new System.Drawing.Point(458, 291);
             this.läggTillKnapp.Margin = new System.Windows.Forms.Padding(2);
             this.läggTillKnapp.Name = "läggTillKnapp";
             this.läggTillKnapp.Size = new System.Drawing.Size(90, 38);
@@ -151,16 +149,6 @@
             this.läggTillKnapp.Text = "Lägg till";
             this.läggTillKnapp.UseVisualStyleBackColor = false;
             this.läggTillKnapp.Click += new System.EventHandler(this.läggTill_Click_1);
-            // 
-            // intervallLabel
-            // 
-            this.intervallLabel.AutoSize = true;
-            this.intervallLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.intervallLabel.Location = new System.Drawing.Point(372, 284);
-            this.intervallLabel.Name = "intervallLabel";
-            this.intervallLabel.Size = new System.Drawing.Size(70, 21);
-            this.intervallLabel.TabIndex = 41;
-            this.intervallLabel.Text = "Intervall:";
             // 
             // antalAvsnitt
             // 
@@ -199,16 +187,6 @@
             this.progressBar1.Style = System.Windows.Forms.ProgressBarStyle.Marquee;
             this.progressBar1.TabIndex = 45;
             // 
-            // intervallCombo
-            // 
-            this.intervallCombo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.intervallCombo.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.intervallCombo.FormattingEnabled = true;
-            this.intervallCombo.Location = new System.Drawing.Point(376, 308);
-            this.intervallCombo.Name = "intervallCombo";
-            this.intervallCombo.Size = new System.Drawing.Size(250, 29);
-            this.intervallCombo.TabIndex = 40;
-            // 
             // AddNewForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -219,8 +197,6 @@
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.namnTextBox);
             this.Controls.Add(this.antalAvsnitt);
-            this.Controls.Add(this.intervallLabel);
-            this.Controls.Add(this.intervallCombo);
             this.Controls.Add(this.läggTillKnapp);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -251,11 +227,9 @@
         private System.Windows.Forms.TextBox urlTextBox;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button läggTillKnapp;
-        private System.Windows.Forms.Label intervallLabel;
         private System.Windows.Forms.Label antalAvsnitt;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.TextBox namnTextBox;
         private System.Windows.Forms.ProgressBar progressBar1;
-        private System.Windows.Forms.ComboBox intervallCombo;
     }
 }

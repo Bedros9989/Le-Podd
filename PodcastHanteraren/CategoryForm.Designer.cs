@@ -96,7 +96,7 @@
             // 
             // taBort
             // 
-            this.taBort.BackColor = System.Drawing.Color.LightBlue;
+            this.taBort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.taBort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.taBort.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.taBort.Location = new System.Drawing.Point(168, 426);
@@ -109,7 +109,7 @@
             // 
             // läggTill
             // 
-            this.läggTill.BackColor = System.Drawing.Color.LightBlue;
+            this.läggTill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.läggTill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.läggTill.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.läggTill.Location = new System.Drawing.Point(438, 268);
@@ -130,7 +130,7 @@
             // 
             // ändra
             // 
-            this.ändra.BackColor = System.Drawing.Color.LightBlue;
+            this.ändra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.ändra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ändra.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ändra.Location = new System.Drawing.Point(72, 426);

@@ -32,8 +32,6 @@ namespace PodcastHanteraren
             nameLabel.Visible = false;
             kategoriLabel.Visible = false;
             kategoriCombo.Visible = false;
-            intervallLabel.Visible = false;
-            intervallCombo.Visible = false;
             antalAvsnitt.Visible = false;
             läggTillKnapp.Visible = false;
             progressBar1.Visible = false;
@@ -66,8 +64,6 @@ namespace PodcastHanteraren
                 nameLabel.Visible = true;
                 kategoriLabel.Visible = true;
                 kategoriCombo.Visible = true;
-                intervallLabel.Visible = true;
-                intervallCombo.Visible = true;
                 antalAvsnitt.Visible = true;
                 läggTillKnapp.Visible = true;
                 antalAvsnitt.Text = $"Episodes: {episodeCount}";
