@@ -111,6 +111,20 @@ C:\Users\Sofie\Documents\GitHub\Le-Podd\PodcastHanteraren\obj\Debug\PodcastHante
 \\Mac\Home\Documents\GitHub\Le-Podd\PodcastHanteraren\bin\Debug\Vlc.DotNet.Core.dll
 \\Mac\Home\Documents\GitHub\Le-Podd\PodcastHanteraren\bin\Debug\Vlc.DotNet.Core.Interops.dll
 \\Mac\Home\Documents\GitHub\Le-Podd\PodcastHanteraren\bin\Debug\Vlc.DotNet.Forms.dll
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.AssemblyReference.cache
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\Interop.MediaPlayer.dll
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\Interop.WMPDXMLib.dll
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\Interop.WMPLib.dll
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\AxInterop.WMPLib.dll
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.ResolveComReference.cache
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.ChangeForm.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.MainForm.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.LibraryForm.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.AddNewForm.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.PodcastForm.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.CategoryForm.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.MainForm.tn-ZA.resources
+\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.GenerateResource.cache
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\bin\Debug\PodcastHanteraren.exe.config
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\bin\Debug\PodcastHanteraren.exe
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\bin\Debug\PodcastHanteraren.pdb
@@ -144,21 +158,7 @@ C:\Users\Sofie\Documents\GitHub\Le-Podd\PodcastHanteraren\obj\Debug\PodcastHante
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\bin\Debug\Xamarin.Forms.Xaml.xml
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\bin\Debug\Interop.WMPLib.dll
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\bin\Debug\AxInterop.WMPLib.dll
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.AssemblyReference.cache
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\Interop.MediaPlayer.dll
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\Interop.WMPDXMLib.dll
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\Interop.WMPLib.dll
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\AxInterop.WMPLib.dll
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.ResolveComReference.cache
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.ChangeForm.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.MainForm.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.LibraryForm.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.AddNewForm.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.PodcastForm.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.CategoryForm.resources
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.Properties.Resources.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.MainForm.tn-ZA.resources
-\\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.GenerateResource.cache
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\PodcastHanteraren.csproj.CoreCompileInputs.cache
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\XamlC.stamp
 \\Mac\Home\Documents\C#\Le Podd\PodcastHanteraren\obj\Debug\tn-ZA\PodcastHanteraren.resources.dll

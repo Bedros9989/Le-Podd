@@ -203,12 +203,6 @@
     <None Include="Resources\bin %281%29.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\add.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\add1.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\add %281%29.png" />
   </ItemGroup>
   <ItemGroup>
@@ -219,15 +213,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\shutdown.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Namnlös design.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\Namnlös design %281%29.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\podcast hanteraren.png" />
   </ItemGroup>
   <ItemGroup>
     <COMReference Include="AxWMPLib">
