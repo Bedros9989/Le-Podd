@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Windows.Forms;
 
 namespace PodcastHanteraren
@@ -122,7 +123,8 @@ namespace PodcastHanteraren
 
                 if (episode != null)
                 {
-                    richTextBox1.Text = episode.Description;
+                    string rättBeskrivning = FormateraBeskrivning(episode.Description);
+                    richTextBox1.Text = rättBeskrivning;
                 }
                 else
                 {
@@ -186,5 +188,13 @@ namespace PodcastHanteraren
             }
         }
 
+        public static string FormateraBeskrivning(string beskrivning)
+        {
+            var steg1 = Regex.Replace(beskrivning, @"<[^>]+>", "").Trim();
+            var steg2 = Regex.Replace(steg1, @"&nbsp;", " ");
+            var steg3 = Regex.Replace(steg2, @"\s{2,}", " ");
+
+            return steg3;
+        }
     }
 }

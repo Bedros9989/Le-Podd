@@ -64,7 +64,7 @@ namespace PodcastHanteraren
                 kategoriCombo.Visible = true;
                 antalAvsnitt.Visible = true;
                 läggTillKnapp.Visible = true;
-                antalAvsnitt.Text = $"Episodes: {episodeCount}";
+                antalAvsnitt.Text = $"Antal avsnitt: {episodeCount}";
                 
                 string imageUrl = feed.ImageUrl?.ToString();
 

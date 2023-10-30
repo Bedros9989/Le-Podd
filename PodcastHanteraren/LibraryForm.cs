@@ -12,6 +12,7 @@ namespace PodcastHanteraren
         PodcastManager podcastManager;
         private bool textBoxFirstClick = true;
 
+
         public LibraryForm()
         {
             podcastManager = new PodcastManager();
@@ -19,13 +20,13 @@ namespace PodcastHanteraren
             listViewPodcasts.View = View.LargeIcon;
             listViewPodcasts.LargeImageList = imageList1;
             PopulatePodcastsListView();
-            kategoriDropBox();
             listViewPodcasts.ItemActivate += listViewPodcasts_ItemActivate;
+            kategoriDropBox();
         }
 
         private void kategoriDropBox()
         {
-            kategoriCombo.Items.Add("");
+            kategoriCombo.Items.Add("Visa alla");
             List<Category> categories = podcastManager.RetrieveAll<Category>();
             foreach (Category category in categories)
             {
@@ -93,7 +94,11 @@ namespace PodcastHanteraren
         private void kategoriCombo_SelectedIndexChanged(object sender, EventArgs e)
         {
             listViewPodcasts.Items.Clear();
-            string category = (kategoriCombo.SelectedItem != null) ? kategoriCombo.SelectedItem.ToString() : string.Empty;
+
+            string category = (kategoriCombo.SelectedItem != null && kategoriCombo.SelectedItem.ToString() != "Visa alla")
+                ? kategoriCombo.SelectedItem.ToString()
+                : string.Empty;
+
             List<Podcast> filteredPodcasts = podcastManager.SortByCategory(category);
             PopulateListViewWithPodcasts(filteredPodcasts);
         }

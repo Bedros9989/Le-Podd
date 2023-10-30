@@ -81,9 +81,9 @@
             this.titelLabel.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.titelLabel.Location = new System.Drawing.Point(374, 81);
             this.titelLabel.Name = "titelLabel";
-            this.titelLabel.Size = new System.Drawing.Size(39, 21);
+            this.titelLabel.Size = new System.Drawing.Size(42, 21);
             this.titelLabel.TabIndex = 33;
-            this.titelLabel.Text = "Titel";
+            this.titelLabel.Text = "Titel:";
             // 
             // urlLabel
             // 
@@ -110,6 +110,7 @@
             this.sökKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.sökKnapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.sökKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.sökKnapp.ForeColor = System.Drawing.Color.White;
             this.sökKnapp.Location = new System.Drawing.Point(130, 147);
             this.sökKnapp.Margin = new System.Windows.Forms.Padding(2);
             this.sökKnapp.Name = "sökKnapp";
@@ -130,7 +131,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(74, 200);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 215);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(200, 200);
             this.pictureBox1.TabIndex = 38;
@@ -141,6 +142,7 @@
             this.läggTillKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.läggTillKnapp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.läggTillKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.läggTillKnapp.ForeColor = System.Drawing.Color.White;
             this.läggTillKnapp.Location = new System.Drawing.Point(458, 291);
             this.läggTillKnapp.Margin = new System.Windows.Forms.Padding(2);
             this.läggTillKnapp.Name = "läggTillKnapp";
@@ -154,7 +156,7 @@
             // 
             this.antalAvsnitt.AutoSize = true;
             this.antalAvsnitt.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.antalAvsnitt.Location = new System.Drawing.Point(127, 413);
+            this.antalAvsnitt.Location = new System.Drawing.Point(109, 428);
             this.antalAvsnitt.Name = "antalAvsnitt";
             this.antalAvsnitt.Size = new System.Drawing.Size(67, 21);
             this.antalAvsnitt.TabIndex = 42;
@@ -191,7 +193,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(674, 445);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.nameLabel);

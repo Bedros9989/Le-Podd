@@ -49,7 +49,7 @@
             // 
             this.okKnapp.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.okKnapp.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.okKnapp.ForeColor = System.Drawing.Color.Black;
+            this.okKnapp.ForeColor = System.Drawing.Color.White;
             this.okKnapp.Location = new System.Drawing.Point(109, 154);
             this.okKnapp.Name = "okKnapp";
             this.okKnapp.Size = new System.Drawing.Size(92, 33);

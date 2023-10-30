@@ -35,10 +35,10 @@
             this.läggTillKnapp = new System.Windows.Forms.Button();
             this.bibliotekKnapp = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.startKnapp = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelDesktopPane = new System.Windows.Forms.Panel();
             this.video = new AxWMPLib.AxWindowsMediaPlayer();
-            this.startKnapp = new System.Windows.Forms.Button();
             this.panelMenu.SuspendLayout();
             this.panel1.SuspendLayout();
             this.panelDesktopPane.SuspendLayout();
@@ -107,9 +107,18 @@
             resources.ApplyResources(this.panel1, "panel1");
             this.panel1.Name = "panel1";
             // 
+            // startKnapp
+            // 
+            resources.ApplyResources(this.startKnapp, "startKnapp");
+            this.startKnapp.FlatAppearance.BorderSize = 0;
+            this.startKnapp.ForeColor = System.Drawing.Color.White;
+            this.startKnapp.Name = "startKnapp";
+            this.startKnapp.UseVisualStyleBackColor = true;
+            this.startKnapp.Click += new System.EventHandler(this.start_Click);
+            // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(224)))));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             resources.ApplyResources(this.panel2, "panel2");
             this.panel2.Name = "panel2";
             this.panel2.MouseDown += new System.Windows.Forms.MouseEventHandler(this.panel2_MouseDown);
@@ -128,15 +137,6 @@
             resources.ApplyResources(this.video, "video");
             this.video.Name = "video";
             this.video.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("video.OcxState")));
-            // 
-            // startKnapp
-            // 
-            resources.ApplyResources(this.startKnapp, "startKnapp");
-            this.startKnapp.FlatAppearance.BorderSize = 0;
-            this.startKnapp.ForeColor = System.Drawing.Color.White;
-            this.startKnapp.Name = "startKnapp";
-            this.startKnapp.UseVisualStyleBackColor = true;
-            this.startKnapp.Click += new System.EventHandler(this.start_Click);
             // 
             // MainForm
             // 

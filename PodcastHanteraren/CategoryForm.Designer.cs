@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.kategoriTabell = new System.Windows.Forms.DataGridView();
             this.spara = new System.Windows.Forms.Button();
@@ -57,8 +57,8 @@
             this.kategoriTabell.AllowUserToDeleteRows = false;
             this.kategoriTabell.AllowUserToResizeColumns = false;
             this.kategoriTabell.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.kategoriTabell.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.kategoriTabell.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle2;
             this.kategoriTabell.BackgroundColor = System.Drawing.Color.White;
             this.kategoriTabell.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.kategoriTabell.Location = new System.Drawing.Point(41, 98);
@@ -73,9 +73,10 @@
             // 
             // spara
             // 
-            this.spara.BackColor = System.Drawing.Color.LightCyan;
+            this.spara.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(115)))), ((int)(((byte)(115)))), ((int)(((byte)(115)))));
             this.spara.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.spara.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.spara.ForeColor = System.Drawing.Color.White;
             this.spara.Location = new System.Drawing.Point(72, 426);
             this.spara.Name = "spara";
             this.spara.Size = new System.Drawing.Size(90, 38);
@@ -99,6 +100,7 @@
             this.taBort.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.taBort.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.taBort.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.taBort.ForeColor = System.Drawing.Color.White;
             this.taBort.Location = new System.Drawing.Point(168, 426);
             this.taBort.Name = "taBort";
             this.taBort.Size = new System.Drawing.Size(90, 38);
@@ -112,6 +114,7 @@
             this.läggTill.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.läggTill.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.läggTill.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.läggTill.ForeColor = System.Drawing.Color.White;
             this.läggTill.Location = new System.Drawing.Point(438, 268);
             this.läggTill.Name = "läggTill";
             this.läggTill.Size = new System.Drawing.Size(90, 38);
@@ -133,6 +136,7 @@
             this.ändra.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(166)))), ((int)(((byte)(138)))));
             this.ändra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.ändra.Font = new System.Drawing.Font("Nirmala UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ändra.ForeColor = System.Drawing.Color.White;
             this.ändra.Location = new System.Drawing.Point(72, 426);
             this.ändra.Name = "ändra";
             this.ändra.Size = new System.Drawing.Size(90, 38);
@@ -155,7 +159,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(252)))), ((int)(((byte)(224)))));
             this.ClientSize = new System.Drawing.Size(674, 480);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.ändra);
